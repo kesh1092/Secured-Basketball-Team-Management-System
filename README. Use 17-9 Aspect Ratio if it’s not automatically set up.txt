@@ -1,1 +1,0 @@
-Use 17-9 Aspect Ratio if it’s not automatically set up
