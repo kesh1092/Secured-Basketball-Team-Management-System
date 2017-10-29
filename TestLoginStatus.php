@@ -1,11 +1,6 @@
 <?php
-//include('session.php');
-?>
 
 
-<?php
-
-/*
 
 require_once('SQLFunctions.php');
 session_start();
@@ -26,23 +21,23 @@ else {
         $link = connectDB();
 
         // Prep SQL statement to find the user name based on the user_id 
-        $sql = "SELECT username FROM User_Dfn WHERE User_ID = ".$user_id;
+        $sql = "SELECT LoginID FROM Player WHERE ID = ".$user_id;
         
         // execute the sql statement
         if($result=mysqli_query($link,$sql)) {
             
-          // from the sql results, assign the username that returned to the $username variable 
+          // from the sql results, assign the LoginID that returned to the $LoginID variable 
           while($row = mysqli_fetch_assoc($result)) {
-            $username = $row['username'];
+            $LoginID = $row['LoginID'];
           }        
         }
 
         // Return Status to User
-        if($username == false) {
+        if($LoginID == false) {
             $message = 'Access Error';
         }
         else {
-            $message = 'Welcome '.$username;
+            $message = 'Welcome '.$LoginID;
         }
     }
     
@@ -52,7 +47,7 @@ else {
     }
 }
 
-*/
+
 
 ?>
 
@@ -61,6 +56,6 @@ else {
         <title>Test Login Status</title>
     </head>
     <body>
-        <h2><?php echo $message; ?></h2>
+        <h2><?php echo $message;?></h2>
     </body>
 </html>

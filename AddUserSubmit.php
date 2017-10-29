@@ -24,12 +24,16 @@ elseif (strlen( $_POST['Password']) > 8 || strlen($_POST['Password']) < 4)
 
 else
 {
-    // Store LoginID and Passwords as variable  
+    //Store variables
     //Use filter_var to remove special characters from the inputs 
     $LoginID = filter_var($_POST['LoginID'], FILTER_SANITIZE_STRING);
     $Password = filter_var($_POST['Password'], FILTER_SANITIZE_STRING);
     $Name = filter_var($_POST['Name'], FILTER_SANITIZE_STRING);
     $Birthday = $_POST['Birthday'];
+    $Address = filter_var($_POST['Address'], FILTER_SANITIZE_STRING);
+    $Email = filter_var($_POST['Email'], FILTER_SANITIZE_STRING);
+    $PhoneNumber = filter_var($_POST['PhoneNumber'], FILTER_SANITIZE_STRING);
+    $PlayPos = filter_var($_POST['PlayPos'], FILTER_SANITIZE_STRING);
     
 
     // Encrypt with password with sha1, a cryptographic hash function   
@@ -50,7 +54,7 @@ else
               $message = "LoginID already exists";
             } else {
               // Prepare the sql insert statement  
-              $sql = "INSERT INTO Player (LoginID, Password, Name, Birthday) VALUES ('".$LoginID."', '".$Password."', '".$Name."', '".$Birthday."')";
+              $sql = "INSERT INTO Player (LoginID, Password, Name, Birthday, Address, Email, PhoneNumber, PlayPos) VALUES ('".$LoginID."', '".$Password."', '".$Name."', '".$Birthday."', '".$Address."', '".$Email."', '".$PhoneNumber."', '".$PlayPos."')";
               if (mysqli_query($link, $sql)) {
                 $message = 'New user added';
               } else { echo  "<br>Error: " . $sql . "<br>" . mysqli_error($link);  }

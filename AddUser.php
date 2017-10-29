@@ -41,8 +41,36 @@ session_start();
       <input type="date" name="Birthday" value="" required/>
       <i>(enter date in YYYY-MM-DD form if typing manually)</i>
     </p>
-    <p>
     
+    <p>
+      <label>Address</label>
+      <input type="text" name="Address" value="" maxlength="128" required/>
+      <i>(4-128 characters)</i>
+    </p>
+    <p>    
+    
+    <p>
+      <label>Email</label>
+      <input type="text" name="Email" value="" maxlength="32" required/>
+      <i>(4-32 characters)</i>
+    </p>
+    <p>   
+    
+    <p>
+      <label>Phone Number</label>
+      <input type="text" name="PhoneNumber" value="" minlength="10" maxlength="10" required/>
+      <i>(10 characters)</i>
+    </p>
+    <p> 
+    
+    <p>
+      <label>Player Position</label>
+      <input type="text" name="PlayPos" value="" minlength="4" maxlength="20" required/>
+      <i>(4-20 characters)</i>
+    </p>
+    <p> 
+    
+    <p>
     <p> 
       <input type="submit" value="Add Player" />
     </p>

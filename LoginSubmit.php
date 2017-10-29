@@ -56,15 +56,14 @@ else
             $_SESSION['user_id'] = $user_id;
             $_SESSION['timeout'] = time();
             ob_start();
-            header("Location: hello-world.php");
+            header("Location: PlayerPage.php");
             exit();
             $message = 'You are now logged in';
           }        
         }
-          if($user_id == false)
-          {
+        if($user_id == false) {
             $message = 'Login Failed';
-          }
+        }
     }    
     catch(Exception $e)
     {
