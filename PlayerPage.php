@@ -6,6 +6,8 @@ require_once('SQLFunctions.php');
 
 
     $user_id = $_SESSION['user_id'];
+    
+    
     try {
         
          // Connect to CRUD Database
@@ -29,8 +31,7 @@ require_once('SQLFunctions.php');
           }        
         }
         
-        
-        
+      
         // Prep SQL statement to find the user name based on the user_id 
         $sql2 = "SELECT Year, TotalPoints, ASPG FROM Stats WHERE PlayerID = ".$user_id;
         
@@ -93,13 +94,14 @@ require_once('SQLFunctions.php');
 <html>
 <head>
   <title>View Player Info</title>
+  <link href="styles.css" rel="stylesheet" type="text/css"
 </head>
 
 <body>
-<h2>View Player Info</h2>
+<h1><br><center><u>View Player Info</u></center></h1>
 <h2></h2>
 <form action="PlayerPageSubmit.php" method="post">
-  <fieldset>
+  <fieldset style = "Color: #000000; border-color: #2645c1; border-width: 10px; border-style: solid;">
 
     <p>
       <label>Name</label>
@@ -132,23 +134,76 @@ require_once('SQLFunctions.php');
     
     <p>
       <label>Player Position</label>
-      <input type="text" name="PlayPos" value="<?php echo $PlayPos;?>" minlength="4" maxlength="20" required/>
+      
+      <?php if ($PlayPos == "center") { ?>  
+        <select name="PlayPos">
+          <option value="point gaurd">point gaurd</option>
+          <option value="shooting gaurd">shooting gaurd</option>
+          <option value="small forward">small forward</option>
+          <option value="power forward">power forward</option>
+          <option value="center" selected>center</option>
+        </select> 
+      <?php } ?>  
+      
+      <?php if ($PlayPos == "power forward") { ?>  
+        <select name="PlayPos">
+          <option value="point gaurd">point gaurd</option>
+          <option value="shooting gaurd">shooting gaurd</option>
+          <option value="small forward">small forward</option>
+          <option value="power forward" selected>power forward</option>
+          <option value="center">center</option>
+        </select> 
+      <?php } ?>
+      
+      <?php if ($PlayPos == "small forward") { ?>  
+        <select name="PlayPos">
+          <option value="point gaurd">point gaurd</option>
+          <option value="shooting gaurd">shooting gaurd</option>
+          <option value="small forward" selected>small forward</option>
+          <option value="power forward">power forward</option>
+          <option value="center">center</option>
+        </select> 
+      <?php } ?>  
+      
+      <?php if ($PlayPos == "shooting gaurd") { ?>  
+        <select name="PlayPos">
+          <option value="point gaurd">point gaurd</option>
+          <option value="shooting gaurd" selected>shooting gaurd</option>
+          <option value="small forward">small forward</option>
+          <option value="power forward">power forward</option>
+          <option value="center">center</option>
+        </select> 
+      <?php } ?>
+      
+      <?php if ($PlayPos == "point gaurd") { ?>  
+        <select name="PlayPos">
+          <option value="point gaurd" selected>point gaurd</option>
+          <option value="shooting gaurd">shooting gaurd</option>
+          <option value="small forward">small forward</option>
+          <option value="power forward">power forward</option>
+          <option value="center">center</option>
+        </select> 
+      <?php } ?> 
+      
     </p>
-    <p> 
-    
+    <p>
+
+    <input type="hidden" name="LoginID" value="<?php echo $LoginID?>">
+
     <p> 
       <input type="submit" value="Submit Changes" />
     </p>
-    
+    <br>
     <p>
-        <h3>Stats</h3>
+        <h3><u>Stats:</u></h3>
         <label>Year: <?php echo $Year;?> <br> Total Points: <?php echo $TotalPoints;?> <br> ASPG: <?php echo $ASPG;?></label>
     </p>
     
     <p>
-        <h3>Trainings</h3>
+        <h3><u>Trainings:</u></h3>
         <label>Training Name: <?php echo $TrainingName;?> <br> Instruction: <?php echo $Instruction;?> <br> Length: <?php echo $TimePeriodinHour;?> hours</label>
     </p>
+    
     
   </fieldset>
 </form>

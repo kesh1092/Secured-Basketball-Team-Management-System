@@ -65,8 +65,13 @@ session_start();
     
     <p>
       <label>Player Position</label>
-      <input type="text" name="PlayPos" value="" minlength="4" maxlength="20" required/>
-      <i>(4-20 characters)</i>
+        <select name="PlayPos">
+          <option value="point gaurd" selected>point gaurd</option>
+          <option value="shooting gaurd">shooting gaurd</option>
+          <option value="small forward">small forward</option>
+          <option value="power forward">power forward</option>
+          <option value="center">center</option>
+        </select> 
     </p>
     <p> 
     
