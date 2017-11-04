@@ -1,57 +1,135 @@
-
 <?php
-	// echo 'test 2';
-	require_once('SQLFunctions.php');
-	// session_start();
+session_start();
+require_once('../config.php');
 
- 
 
-  //Store variables
-  //Use filter_var to remove special characters from the inputs 
-  $LoginID =  $_POST['LoginID'] ;
-  $Password =  $_POST['Password'] ;
-      
-  
-  try
-  {
-      //Connect to Database  mysqli(Server,User,Password,Database) 
-      $link = connectDB();
+$LoginID =  $_POST['LoginID']; //passed on from login.php
+$passAtempt =  $_POST['Password']; //passed on from login.php
+// $_SESSION['timeout'] = time(); //not implemented
+// echo 'Password: '. $passAtempt . ".<br>"; 
 
-      $sql = "SELECT 1 FROM Manager WHERE LoginID = '".$LoginID."'";
-      if($result=mysqli_query($link,$sql)) 
-        if(mysqli_num_rows($result)>=1) {
-          mysqli_close($link);
-          echo ("<script>
-                  alert('Logging In...');
+
+//attempt manager login
+try
+{
+   $link = connectDB();
+
+//MANAGER LOGIN
+   $sql = "SELECT LoginID FROM Manager WHERE LoginID = '".$LoginID."'";
+
+   if($response=mysqli_query($link,$sql)) 
+   {
+      if(mysqli_num_rows($response)==1) 
+      {
+         $getIdQuery = "SELECT ID, Password FROM Manager WHERE LoginID = '".$LoginID."'";
+
+         if ($response =mysqli_query($link, $getIdQuery)) 
+         { 
+            $row = mysqli_fetch_assoc($response);
+            $passReal = $row['Password'];
+            $ID = $row['ID'];
+
+            if($passAtempt == $passReal)
+            {
+               if ($response->num_rows) 
+               {   
+                  $_SESSION['ID'] = $row["ID"];
+                  $ID = $row["ID"];
+               } 
+               else
+                  $_SESSION['ID'] = -1;
+
+               $ID = $_SESSION['ID'];
+               echo 'id2: '. $ID. '<br>';
+
+
+               $_SESSION['LoginID'] = $LoginID;      
+
+               echo '<br>logged in<br>';
+               mysqli_close($link);
+
+               echo ("<script>
+                  // alert('Logging In...');
                   window.location.assign('manager_home.php?loggedIn');
-                 </script>");
-        } 
+                  </script>");
+            }
+         }
+         else
+            { echo  "<br>Error: " . $getIdQuery . "<br>" . mysqli_error($link);  }
+
+      } 
+      elseif(mysqli_num_rows($response)!=0) 
+      {
+         echo 'Theres '. mysqli_num_rows($response). ' identical Manager LoginIDs. Exit app.<br>'; 
+         exit();
+      }
+   }
 
 
-//PLAYER LOGIN .just redirect to correct page and uncomment
-      // $sql = "SELECT 1 FROM Player WHERE LoginID = '".$LoginID."'";
-      // if($result=mysqli_query($link,$sql)) 
-      //   if(mysqli_num_rows($result)>=1) {
-      //     mysqli_close($link);
-      //     echo ("<script>
-      //             //alert('Logging In...');
-      //             window.location.assign('add_manager.php');
-      //            </script>");
-      //   } 
+//PLAYER LOGIN
+   $sql = "SELECT LoginID FROM Player WHERE LoginID = '".$LoginID."'";
+
+   if($response=mysqli_query($link,$sql)) 
+   {
+      if(mysqli_num_rows($response)==1) 
+      {
+         $getIdQuery = "SELECT ID, Password FROM Player WHERE LoginID = '".$LoginID."'";
+
+         if ($response =mysqli_query($link, $getIdQuery)) 
+         { 
+            $row = mysqli_fetch_assoc($response);
+            $passReal = $row['Password'];
+            $ID = $row['ID'];
+
+            if($passAtempt == $passReal)
+            {
+               if ($response->num_rows) 
+               {   
+                  $_SESSION['ID'] = $row["ID"];
+                  $ID = $row["ID"];
+               } 
+               else
+                  $_SESSION['ID'] = -1;
+
+               $ID = $_SESSION['ID'];
+               echo 'id2: '. $ID. '<br>';
 
 
-	  echo ("<script>
-	          // alert('Invalide LoginID or Password...');
-	          window.location.assign('login.php?invalid');
-	         </script>");
+               $_SESSION['LoginID'] = $LoginID;      
+
+               echo '<br>logged in<br>';
+               mysqli_close($link);
+
+               echo ("<script>
+                  // alert('Logging In...');
+                  window.location.assign('manager_home.php?loggedIn');
+                  </script>");
+            }
+         }
+         else
+            { echo  "<br>Error: " . $getIdQuery . "<br>" . mysqli_error($link);  }
+
+      } 
+      elseif(mysqli_num_rows($response)!=0) 
+      {
+         echo 'Theres '. mysqli_num_rows($response). ' identical Player LoginIDs. Exit app.<br>'; 
+         exit();
+      }
+   }
 
 
+// REDIRECT back to login page
+   echo ("<script>
+                  // alert('Invalide LoginID or Password...');
+      window.location.assign('login.php?invalid');
+      </script>");
 
-  }
-  catch(Exception $e)
-  {
-      $message = 'Unable to process request';
-  }
+}
+
+catch(Exception $e)
+{
+   $message = 'Unable to process request';
+}
 
 
 ?>

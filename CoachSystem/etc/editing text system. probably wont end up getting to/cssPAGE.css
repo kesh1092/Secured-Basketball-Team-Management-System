@@ -1,0 +1,17 @@
+body {
+    font-family: "helvetica neue";
+    color: #666;
+    /*padding: 0 20%;*/
+}
+
+li input {
+    display: none;
+}
+
+li.edit span {
+    display: none;
+}
+
+li.edit input {
+    display: initial;
+}

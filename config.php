@@ -1,11 +1,10 @@
 <?php
-function redirect_to( $location = NULL ) {
-        if ($location != NULL) {
-            header("Location: {$location}");
-            exit;
-        }
-    }
-include('config.php');
+
+define('DB_HOST', 'localhost'); /*Database Server*/
+define('DB_NAME', 'Phase2'); /*Database Name*/
+define('DB_USER', 'root'); /*Database Username*/
+define('DB_PWD', 'root'); /*Database Password*/
+
 
 function connectDB() {
     $link = new mysqli(DB_HOST, DB_USER, DB_PWD, DB_NAME);
