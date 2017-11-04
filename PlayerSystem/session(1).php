@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['id'])) {
+if(!isset($_SESSION['user_id'])) {
     
     header("Location: Login.php");
     exit;
@@ -31,9 +31,13 @@ else {
 ?>
 
 <div align="right">
-  <a href="hello-world.php">Home</a>
-  <a href="AddUser.php">New User</a>
+  <a href="PlayerPage.php">See Your Player Info!</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="AddUser.php">New? Create a New User</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="Login.php">Log On</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="Logout.php">Log Off</a>
-  <a href="TestLoginStatus.php">Test Login Status</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="ChangePassword.php">Change Password</a>
 </div> 

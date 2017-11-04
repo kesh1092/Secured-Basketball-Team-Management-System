@@ -1,4 +1,9 @@
 <?php
+include('session.php');
+?>
+
+
+<?php
 
 //Begin Session
 session_start();
@@ -47,25 +52,24 @@ require_once('SQLFunctions.php');
         }
         
         
-        // Prep SQL statement to find the user name based on the user_id 
+        // Prep SQL statement
         $sql3 = "SELECT TrainingName FROM AssignTraining WHERE PlayerID = ".$user_id;
         
         // execute the sql statement
         if($result3=mysqli_query($link,$sql3)) {
             
-          // from the sql results, assign the LoginID that returned to the $LoginID variable 
           while($row = mysqli_fetch_assoc($result3)) {
             $TrainingName = $row['TrainingName'];
           }        
         }
         
-        // Prep SQL statement to find the user name based on the user_id 
+        
+        // Prep SQL statement
         $sql4 = "SELECT Instruction, TimePeriodinHour FROM Training WHERE TrainingName = ".$TrainingName;
         
         // execute the sql statement
         if($result4=mysqli_query($link,$sql4)) {
             
-          // from the sql results, assign the LoginID that returned to the $LoginID variable 
           while($row = mysqli_fetch_assoc($result4)) {
             $Instruction = $row['Instruction'];
             $TimePeriodinHour = $row['TimePeriodinHour'];

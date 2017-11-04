@@ -1,4 +1,9 @@
 <?php
+include('session.php');
+?>
+
+
+<?php
 session_start();
 
 session_unset();

@@ -10,17 +10,28 @@ require_once('SQLFunctions.php');
 session_start();
 
 
+
+
+//Check password length is not more than 8 and not less than 4 
+if (strlen( $_POST['NewPassword']) > 8 || strlen($_POST['NewPassword']) < 4)
+{
+    $message = 'Incorrect Length for Password';
+}
+
+
+else
+{
+
     //Store variables
     //Use filter_var to remove special characters from the inputs 
-    $LoginID = filter_var($_POST['LoginID'], FILTER_SANITIZE_STRING);
-    $Name = filter_var($_POST['Name'], FILTER_SANITIZE_STRING);
-    $Birthday = $_POST['Birthday'];
-    $Address = filter_var($_POST['Address'], FILTER_SANITIZE_STRING);
-    $Email = filter_var($_POST['Email'], FILTER_SANITIZE_STRING);
-    $PhoneNumber = filter_var($_POST['PhoneNumber'], FILTER_SANITIZE_STRING);
-    $PlayPos = filter_var($_POST['PlayPos'], FILTER_SANITIZE_STRING);
+    $NewPassword = filter_var($_POST['NewPassword'], FILTER_SANITIZE_STRING);
     $ID = $_SESSION['user_id'];
 
+    // Encrypt with password with sha1, a cryptographic hash function   
+    // Never store plain text passwords in the database 
+    $NewPassword = sha1( $NewPassword );
+    
+    
     try
     {
         
@@ -29,9 +40,9 @@ session_start();
 
 
         // Prepare the sql insert statement
-        $sql = "UPDATE Player SET Name = '".$Name."', Birthday = '".$Birthday."', Address = '".$Address."', Email = '".$Email."', PhoneNumber = '".$PhoneNumber."', PlayPos = '".$PlayPos."' WHERE ID = '".$ID."'";
+        $sql = "UPDATE Player SET Password = '".$NewPassword."' WHERE ID = '".$ID."'";
         if (mysqli_query($link, $sql)) {
-            $message = 'Edited Player';
+            $message = 'Password Changed';
         } else { 
             echo  "<br>Error: " . $sql . "<br>" . mysqli_error($link);
         }
@@ -42,6 +53,10 @@ session_start();
     {
         $message = 'Unable to process request';
     }
+    
+    
+}
+
 
 
 
@@ -49,7 +64,7 @@ session_start();
 
 <html>
   <head>
-    <title>Player Info Changed</title>
+    <title>Password Changed</title>
   </head>
   <body>
     <!-- Message is a variable that was populated previously based on the php above  -->    
