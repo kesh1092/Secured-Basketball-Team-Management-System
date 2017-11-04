@@ -282,25 +282,25 @@ ALTER TABLE `Player`
 -- Constraints for table `AssignTraining`
 --
 ALTER TABLE `AssignTraining`
-  ADD CONSTRAINT `assigntraining_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `Phase2_DB`.`Player` (`ID`),
-  ADD CONSTRAINT `assigntraining_ibfk_2` FOREIGN KEY (`ManagerID`) REFERENCES `Phase2_DB`.`Manager` (`ID`),
-  ADD CONSTRAINT `assigntraining_ibfk_3` FOREIGN KEY (`TrainingName`) REFERENCES `Phase2_DB`.`Training` (`TrainingName`);
+  ADD CONSTRAINT `AssignTraining_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `Phase2_DB`.`Player` (`ID`),
+  ADD CONSTRAINT `AssignTraining_ibfk_2` FOREIGN KEY (`ManagerID`) REFERENCES `Phase2_DB`.`Manager` (`ID`),
+  ADD CONSTRAINT `AssignTraining_ibfk_3` FOREIGN KEY (`TrainingName`) REFERENCES `Phase2_DB`.`Training` (`TrainingName`);
 
 --
 -- Constraints for table `ManagerCertificate`
 --
 ALTER TABLE `ManagerCertificate`
-  ADD CONSTRAINT `managercertificate_ibfk_1` FOREIGN KEY (`ManagerID`) REFERENCES `Phase2_DB`.`Manager` (`ID`);
+  ADD CONSTRAINT `ManagerCertificate_ibfk_1` FOREIGN KEY (`ManagerID`) REFERENCES `Phase2_DB`.`Manager` (`ID`);
 
 --
 -- Constraints for table `Play`
 --
 ALTER TABLE `Play`
-  ADD CONSTRAINT `play_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `Phase2_DB`.`Player` (`ID`),
-  ADD CONSTRAINT `play_ibfk_2` FOREIGN KEY (`GameID`) REFERENCES `Phase2_DB`.`Game` (`GameID`);
+  ADD CONSTRAINT `Play_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `Phase2_DB`.`Player` (`ID`),
+  ADD CONSTRAINT `Play_ibfk_2` FOREIGN KEY (`GameID`) REFERENCES `Phase2_DB`.`Game` (`GameID`);
 
 --
 -- Constraints for table `Stats`
 --
 ALTER TABLE `Stats`
-  ADD CONSTRAINT `stats_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `Phase2_DB`.`Player` (`ID`);
+  ADD CONSTRAINT `Stats_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `Phase2_DB`.`Player` (`ID`);
