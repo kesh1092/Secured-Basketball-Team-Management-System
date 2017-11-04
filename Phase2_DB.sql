@@ -8,20 +8,20 @@ USE Phase2_DB;
 
 
 --
--- Table structure for table `assigntraining`
+-- Table structure for table `AssignTraining`
 --
 
-CREATE TABLE `assigntraining` (
+CREATE TABLE `AssignTraining` (
   `PlayerID` int(10) UNSIGNED DEFAULT NULL,
   `ManagerID` int(10) UNSIGNED DEFAULT NULL,
   `TrainingName` varchar(16) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `assigntraining`
+-- Dumping data for table `AssignTraining`
 --
 
-INSERT INTO `assigntraining` (`PlayerID`, `ManagerID`, `TrainingName`) VALUES
+INSERT INTO `AssignTraining` (`PlayerID`, `ManagerID`, `TrainingName`) VALUES
 (1, 1, 'Push Ups'),
 (2, 2, 'Sit Ups'),
 (3, 3, 'Jumping Jacks'),
@@ -31,10 +31,10 @@ INSERT INTO `assigntraining` (`PlayerID`, `ManagerID`, `TrainingName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `game`
+-- Table structure for table `Game`
 --
 
-CREATE TABLE `game` (
+CREATE TABLE `Game` (
   `GameID` int(11) NOT NULL,
   `Date` date NOT NULL,
   `Result` enum('Win','Lose','Tie') NOT NULL,
@@ -43,10 +43,10 @@ CREATE TABLE `game` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `game`
+-- Dumping data for table `Game`
 --
 
-INSERT INTO `game` (`GameID`, `Date`, `Result`, `PlayingVenue`, `OpponentTeam`) VALUES
+INSERT INTO `Game` (`GameID`, `Date`, `Result`, `PlayingVenue`, `OpponentTeam`) VALUES
 (1000, '2017-01-01', 'Win', 'Russell Stadium', 'Cowboys'),
 (1001, '2017-01-01', 'Lose', 'Russell Stadium', 'Bears'),
 (1002, '2020-01-01', 'Win', 'Russell Stadium', 'Cowboys'),
@@ -55,10 +55,10 @@ INSERT INTO `game` (`GameID`, `Date`, `Result`, `PlayingVenue`, `OpponentTeam`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `manager`
+-- Table structure for table `Manager`
 --
 
-CREATE TABLE `manager` (
+CREATE TABLE `Manager` (
   `ID` int(10) UNSIGNED NOT NULL,
   `LoginID` varchar(16) NOT NULL,
   `Name` varchar(64) NOT NULL,
@@ -70,55 +70,56 @@ CREATE TABLE `manager` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `manager`
+-- Dumping data for table `Manager`
 --
 
-INSERT INTO `manager` (`ID`, `LoginID`, `Name`, `Password`, `Birthday`, `Address`, `Email`, `PhoneNumber`) VALUES
+INSERT INTO `Manager` (`ID`, `LoginID`, `Name`, `Password`, `Birthday`, `Address`, `Email`, `PhoneNumber`) VALUES
 (1, 'jackhilton43', 'Jack Hiltion', 'Asked23', '1984-11-14', '320 E. Palmer Ct.', 'jackhilly@nmsu.edu', '509-3213'),
 (2, 'dannyboy', 'Danny Borwick', 'Crimson3', '1982-04-15', '3214 Lemon Dr.', 'dannyyy@nmsu.edu', '575-7953'),
 (3, 'nickvolker2', 'Nick Volker', 'Hola231', '1974-11-04', '1543 Doe St.', 'nickvolker@nmsu.edu', '575-7743'),
 (4, 'pricedr', 'Price Drake', 'Manner4', '1979-03-11', '1121 Cabing St.', 'price84@nmsu.edu', '575-2223'),
-(5, 'jimmybeam44', 'Jimmy Beam', 'Yoyo328', '1988-02-05', '164 Kilmore Ave.', 'jimbeam@nmsu.edu', '575-3613');
+(5, 'jimmybeam44', 'Jimmy Beam', 'Yoyo328', '1988-02-05', '164 Kilmore Ave.', 'jimbeam@nmsu.edu', '575-3613'),
+(6, 'asdf', 'Jimmy Beam', 'asdf', '1988-02-05', '164 Kilmore Ave.', 'jimbeam@nmsu.edu', '575-3613');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `managercertificate`
+-- Table structure for table `ManagerCertificate`
 --
 
-CREATE TABLE `managercertificate` (
+CREATE TABLE `ManagerCertificate` (
   `ManagerID` int(10) UNSIGNED DEFAULT NULL,
   `CertificateID` int(11) DEFAULT NULL,
   `Certificate` blob
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `managercertificate`
+-- Dumping data for table `ManagerCertificate`
 --
 
-INSERT INTO `managercertificate` (`ManagerID`, `CertificateID`, `Certificate`) VALUES
-(1, 100233, 0x636174),
-(2, 100234, 0x626c6f62),
-(3, 100235, NULL),
-(4, 100236, NULL),
-(5, 100237, NULL);
+INSERT INTO `ManagerCertificate` (`ManagerID`, `CertificateID`, `Certificate`) VALUES
+(1, 100233, 'blob1'),
+(2, 100234, 'blob2'),
+(3, 100235, 'blob3'),
+(4, 100236, 'blob4'),
+(5, 100237, 'blob5');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `play`
+-- Table structure for table `Play`
 --
 
-CREATE TABLE `play` (
+CREATE TABLE `Play` (
   `PlayerID` int(10) UNSIGNED DEFAULT NULL,
   `GameID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `play`
+-- Dumping data for table `Play`
 --
 
-INSERT INTO `play` (`PlayerID`, `GameID`) VALUES
+INSERT INTO `Play` (`PlayerID`, `GameID`) VALUES
 (1, 1000),
 (2, 1000),
 (3, 1001),
@@ -130,10 +131,10 @@ INSERT INTO `play` (`PlayerID`, `GameID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `player`
+-- Table structure for table `Player`
 --
 
-CREATE TABLE `player` (
+CREATE TABLE `Player` (
   `ID` int(10) UNSIGNED NOT NULL,
   `LoginID` varchar(16) DEFAULT NULL,
   `Name` varchar(64) NOT NULL,
@@ -146,50 +147,24 @@ CREATE TABLE `player` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `player`
+-- Dumping data for table `Player`
 --
 
-INSERT INTO `player` (`ID`, `LoginID`, `Name`, `Password`, `Birthday`, `Address`, `Email`, `PhoneNumber`, `PlayPos`) VALUES
+INSERT INTO `Player` (`ID`, `LoginID`, `Name`, `Password`, `Birthday`, `Address`, `Email`, `PhoneNumber`, `PlayPos`) VALUES
 (1, 'bobjones123', 'Bob Jones', 'GoNMSU', '1996-12-17', '123 Ponder Ave.', 'bobjones@nmsu.edu', '575-43253', 'point guard'),
 (2, 'todrichard342', 'Tod Richard', 'Aggies13', '1995-10-14', '1232 Nickels Ave.', 'toddster@nmsu.edu', '575-3333', 'shooting guard'),
 (3, 'jordanheith54', 'Jordan Heith', 'Tank34', '1997-11-28', '1222 Dover St.', 'jordanh@nmsu.edu', '575-9843', 'small forward'),
 (4, 'brownT321', 'Tim Brown', 'Bball32', '1996-02-09', '983 Holler St.', 'timmybro@nmsu.edu', '575-4993', 'center'),
-(5, 'carterdavis2', 'Carter Davis', 'LetsGoAg', '1997-01-13', '894 Wellington Ave.', 'cdavis@nmsu.edu', '575-3613', 'power forward');
+(5, 'carterdavis2', 'Carter Davis', 'LetsGoAg', '1997-01-13', '894 Wellington Ave.', 'cdavis@nmsu.edu', '575-3613', 'power forward'),
+(6, 'qwer', 'Carter Davis', 'qwer', '1997-01-13', '894 Wellington Ave.', 'cdavis@nmsu.edu', '575-3613', 'power forward');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `staff`
+-- Table structure for table `Stats`
 --
 
-CREATE TABLE `staff` (
-  `ID` int(11) DEFAULT NULL,
-  `Name` varchar(64) NOT NULL,
-  `Birthday` date DEFAULT NULL,
-  `Address` varchar(128) DEFAULT NULL,
-  `Email` varchar(32) DEFAULT NULL,
-  `PhoneNumber` char(10) DEFAULT NULL,
-  `Title` varchar(16) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `staff`
---
-
-INSERT INTO `staff` (`ID`, `Name`, `Birthday`, `Address`, `Email`, `PhoneNumber`, `Title`) VALUES
-(800600392, 'Tom Smith', '1998-12-15', '3628 Noice St.', 'tomsmith@nmsu.edu', '583-6953', 'Water Boy'),
-(800599343, 'Tiffany Smith', '1990-10-17', '343 Callaway St.', 'tiffsmith3@nmsu.edu', '575-4390', 'Janitor'),
-(800600574, 'Russell Johnson', '1987-11-18', '3728 Cameo St.', 'russjohnson212@nmsu.edu', '575-4393', 'Treasurer'),
-(800599432, 'Tyler Doon', '1984-10-20', '342 Cogger St.', 'doony@nmsu.edu', '575-4932', 'Hotdog Sales'),
-(800599633, 'Abby Labue', '1989-11-17', '343 Goon St.', 'abbylabue2@nmsu.edu', '575-4777', 'Ticket Sales');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `stats`
---
-
-CREATE TABLE `stats` (
+CREATE TABLE `Stats` (
   `PlayerID` int(10) UNSIGNED DEFAULT NULL,
   `Year` char(4) DEFAULT NULL,
   `TotalPoints` int(11) DEFAULT NULL,
@@ -197,10 +172,10 @@ CREATE TABLE `stats` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `stats`
+-- Dumping data for table `Stats`
 --
 
-INSERT INTO `stats` (`PlayerID`, `Year`, `TotalPoints`, `ASPG`) VALUES
+INSERT INTO `Stats` (`PlayerID`, `Year`, `TotalPoints`, `ASPG`) VALUES
 (1, '2017', 240, 20),
 (2, '2017', 120, 10),
 (3, '2017', 175, 15),
@@ -210,20 +185,20 @@ INSERT INTO `stats` (`PlayerID`, `Year`, `TotalPoints`, `ASPG`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `training`
+-- Table structure for table `Training`
 --
 
-CREATE TABLE `training` (
+CREATE TABLE `Training` (
   `TrainingName` varchar(16) NOT NULL,
   `Instruction` varchar(256) DEFAULT NULL,
   `TimePeriodinHour` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `training`
+-- Dumping data for table `Training`
 --
 
-INSERT INTO `training` (`TrainingName`, `Instruction`, `TimePeriodinHour`) VALUES
+INSERT INTO `Training` (`TrainingName`, `Instruction`, `TimePeriodinHour`) VALUES
 ('Jumping Jacks', 'Jump up and down and spread legs and arms', 3),
 ('Jumps Squats', 'Bend your knees and jump as high as you can', 4),
 ('Push Ups', 'Get on floor and use arms to push body up', 1),
@@ -235,54 +210,54 @@ INSERT INTO `training` (`TrainingName`, `Instruction`, `TimePeriodinHour`) VALUE
 --
 
 --
--- Indexes for table `assigntraining`
+-- Indexes for table `AssignTraining`
 --
-ALTER TABLE `assigntraining`
+ALTER TABLE `AssignTraining`
   ADD KEY `PlayerID` (`PlayerID`),
   ADD KEY `ManagerID` (`ManagerID`),
   ADD KEY `TrainingName` (`TrainingName`);
 
 --
--- Indexes for table `game`
+-- Indexes for table `Game`
 --
-ALTER TABLE `game`
+ALTER TABLE `Game`
   ADD PRIMARY KEY (`GameID`);
 
 --
--- Indexes for table `manager`
+-- Indexes for table `Manager`
 --
-ALTER TABLE `manager`
+ALTER TABLE `Manager`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `managercertificate`
+-- Indexes for table `ManagerCertificate`
 --
-ALTER TABLE `managercertificate`
+ALTER TABLE `ManagerCertificate`
   ADD KEY `ManagerID` (`ManagerID`);
 
 --
--- Indexes for table `play`
+-- Indexes for table `Play`
 --
-ALTER TABLE `play`
+ALTER TABLE `Play`
   ADD KEY `PlayerID` (`PlayerID`),
   ADD KEY `GameID` (`GameID`);
 
 --
--- Indexes for table `player`
+-- Indexes for table `Player`
 --
-ALTER TABLE `player`
+ALTER TABLE `Player`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `stats`
+-- Indexes for table `Stats`
 --
-ALTER TABLE `stats`
+ALTER TABLE `Stats`
   ADD KEY `PlayerID` (`PlayerID`);
 
 --
--- Indexes for table `training`
+-- Indexes for table `Training`
 --
-ALTER TABLE `training`
+ALTER TABLE `Training`
   ADD PRIMARY KEY (`TrainingName`);
 
 --
@@ -290,42 +265,42 @@ ALTER TABLE `training`
 --
 
 --
--- AUTO_INCREMENT for table `manager`
+-- AUTO_INCREMENT for table `Manager`
 --
-ALTER TABLE `manager`
+ALTER TABLE `Manager`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `player`
+-- AUTO_INCREMENT for table `Player`
 --
-ALTER TABLE `player`
+ALTER TABLE `Player`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `assigntraining`
+-- Constraints for table `AssignTraining`
 --
-ALTER TABLE `assigntraining`
-  ADD CONSTRAINT `assigntraining_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `crud_old`.`player` (`ID`),
-  ADD CONSTRAINT `assigntraining_ibfk_2` FOREIGN KEY (`ManagerID`) REFERENCES `crud_old`.`manager` (`ID`),
-  ADD CONSTRAINT `assigntraining_ibfk_3` FOREIGN KEY (`TrainingName`) REFERENCES `crud_old`.`training` (`TrainingName`);
+ALTER TABLE `AssignTraining`
+  ADD CONSTRAINT `assigntraining_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `Phase2_DB`.`Player` (`ID`),
+  ADD CONSTRAINT `assigntraining_ibfk_2` FOREIGN KEY (`ManagerID`) REFERENCES `Phase2_DB`.`Manager` (`ID`),
+  ADD CONSTRAINT `assigntraining_ibfk_3` FOREIGN KEY (`TrainingName`) REFERENCES `Phase2_DB`.`Training` (`TrainingName`);
 
 --
--- Constraints for table `managercertificate`
+-- Constraints for table `ManagerCertificate`
 --
-ALTER TABLE `managercertificate`
-  ADD CONSTRAINT `managercertificate_ibfk_1` FOREIGN KEY (`ManagerID`) REFERENCES `crud_old`.`manager` (`ID`);
+ALTER TABLE `ManagerCertificate`
+  ADD CONSTRAINT `managercertificate_ibfk_1` FOREIGN KEY (`ManagerID`) REFERENCES `Phase2_DB`.`Manager` (`ID`);
 
 --
--- Constraints for table `play`
+-- Constraints for table `Play`
 --
-ALTER TABLE `play`
-  ADD CONSTRAINT `play_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `crud_old`.`player` (`ID`),
-  ADD CONSTRAINT `play_ibfk_2` FOREIGN KEY (`GameID`) REFERENCES `crud_old`.`game` (`GameID`);
+ALTER TABLE `Play`
+  ADD CONSTRAINT `play_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `Phase2_DB`.`Player` (`ID`),
+  ADD CONSTRAINT `play_ibfk_2` FOREIGN KEY (`GameID`) REFERENCES `Phase2_DB`.`Game` (`GameID`);
 
 --
--- Constraints for table `stats`
+-- Constraints for table `Stats`
 --
-ALTER TABLE `stats`
-  ADD CONSTRAINT `stats_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `crud_old`.`player` (`ID`);
+ALTER TABLE `Stats`
+  ADD CONSTRAINT `stats_ibfk_1` FOREIGN KEY (`PlayerID`) REFERENCES `Phase2_DB`.`Player` (`ID`);
