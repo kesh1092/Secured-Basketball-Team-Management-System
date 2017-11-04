@@ -34,7 +34,7 @@ $ID = $_SESSION['ID'];
 
 <h1 align="center">Manager Home</h1>
 
-<form action="edit_manager_info.php" method="post">
+<form action="view_manager_info.php" method="post">
    <input type="submit" value="Manager Info"/>
 </form>
 <form action="request_player_info.php" method="post">

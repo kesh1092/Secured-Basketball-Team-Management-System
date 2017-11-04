@@ -25,7 +25,7 @@ try {
 
 // from the sql results, assign the LoginID that returned to the $LoginID variable 
       while($row = mysqli_fetch_assoc($result)) {
-// $LoginID = $row['LoginID'];
+         // $LoginID = $row['LoginID']; GET FROM $_SESSION
          $Name = $row['Name'];
          $Birthday = $row['Birthday'];
          $Address = $row['Address'];
@@ -107,7 +107,7 @@ catch (Exception $e) {
 <body>
    <h1><br><center><u>Coach Info</u></center></h1>
    <h2></h2>
-   <form action="PlayerPageSubmit.php" method="post">
+   <form action="update_manager_info_functions.php" method="post">
       <fieldset style = "Color: #000000; border-color: #2645c1; border-width: 10px; border-style: solid;">
 
 
@@ -157,64 +157,9 @@ catch (Exception $e) {
 </p>
 
 
-<?php if ($PlayPos == "center") { ?>  
-<select name="PlayPos">
-   <option value="point gaurd">point gaurd</option>
-   <option value="shooting gaurd">shooting gaurd</option>
-   <option value="small forward">small forward</option>
-   <option value="power forward">power forward</option>
-   <option value="center" selected>center</option>
-</select> 
-<?php } ?>  
-
-<?php if ($PlayPos == "power forward") { ?>  
-<select name="PlayPos">
-   <option value="point gaurd">point gaurd</option>
-   <option value="shooting gaurd">shooting gaurd</option>
-   <option value="small forward">small forward</option>
-   <option value="power forward" selected>power forward</option>
-   <option value="center">center</option>
-</select> 
-<?php } ?>
-
-<?php if ($PlayPos == "small forward") { ?>  
-<select name="PlayPos">
-   <option value="point gaurd">point gaurd</option>
-   <option value="shooting gaurd">shooting gaurd</option>
-   <option value="small forward" selected>small forward</option>
-   <option value="power forward">power forward</option>
-   <option value="center">center</option>
-</select> 
-<?php } ?>  
-
-<?php if ($PlayPos == "shooting gaurd") { ?>  
-<select name="PlayPos">
-   <option value="point gaurd">point gaurd</option>
-   <option value="shooting gaurd" selected>shooting gaurd</option>
-   <option value="small forward">small forward</option>
-   <option value="power forward">power forward</option>
-   <option value="center">center</option>
-</select> 
-<?php } ?>
-
-<?php if ($PlayPos == "point gaurd") { ?>  
-<select name="PlayPos">
-   <option value="point gaurd" selected>point gaurd</option>
-   <option value="shooting gaurd">shooting gaurd</option>
-   <option value="small forward">small forward</option>
-   <option value="power forward">power forward</option>
-   <option value="center">center</option>
-</select> 
-<?php } ?> 
-
+<p> 
+   <input type="submit" value="Submit Changes" />
 </p>
-<p>
-
-   <input type="hidden" name="LoginID" value="<?php echo $LoginID?>">
-
-   <p> 
-      <input type="submit" value="Submit Changes" />
-   </p>
 
 <!--     
 <br>
