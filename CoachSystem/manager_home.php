@@ -2,7 +2,7 @@
 session_start();
 if(empty($_SESSION['LoginID'])) //THIS MUST BE THE FIRST LINE EXECUTED. otherwise it wont work
 {
-   header("Location: index.php?redirected");  
+   header("Location: ../index.php?redirected");  
    exit();
 }
 
@@ -47,7 +47,7 @@ $ID = $_SESSION['ID'];
    <input type="submit" value="Games Menu"/>
 </form>
 <h3>approve player login change requests goes here</h3>
-<form action="index.php?loggedOut" method="post">
+<form action="../index.php?loggedOut" method="post">
    <input type="submit" value="Logout"/>    
 </form>
 

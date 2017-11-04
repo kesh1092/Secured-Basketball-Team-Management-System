@@ -13,7 +13,7 @@ if(isset($_GET['badID']))
 
 
    <h2>Add New Manager</h2>
-   <form action="index.php" method="get">
+   <form action="../index.php" method="get">
       <input type="submit" value="Home"/>
       <!-- <input type="text" name="test 1" value="testVA"/> -->
    </form>
@@ -63,7 +63,7 @@ if(isset($_GET['badID']))
             <input type="text" name="PhoneNumber" value="" minlength="10" maxlength="10" required/>
             <i>(10 characters)</i>
          </p>
-         
+
          <p> 
             <input type="submit" value="Add Manager" />
          </p>

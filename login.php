@@ -24,7 +24,8 @@ if(isset($_GET['invalid']))
 
 <!-- 	<tr><td>LoginID:</td><td><input type="text" name="LoginID" size="16"/></td></tr>
    <tr><td>Password:</td><td><input type="text" name="Password" size="8"/></td></tr> -->
-   <tr><td align="center"><input type="submit"></td></tr>
+   <tr><td align="center">
+      <input type="submit" value="Login"></td></tr>
 </form>
 
 <form action="index.php" method="post">

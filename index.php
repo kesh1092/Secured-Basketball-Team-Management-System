@@ -15,7 +15,7 @@ if(isset($_GET['loggedOut']))
 <html>
 <body>
    Manager Sign up:
-   <form action="add_manager.php" method="post">
+   <form action="CoachSystem/add_manager.php" method="post">
       <input type="submit" value="Sign Up" />
    </form>
    <br>

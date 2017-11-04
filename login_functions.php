@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../config.php');
+require_once('config.php');
 
 
 $LoginID =  $_POST['LoginID']; //passed on from login.php
@@ -50,7 +50,7 @@ try
 
                echo ("<script>
                   // alert('Logging In...');
-                  window.location.assign('manager_home.php?loggedIn');
+                  window.location.assign('CoachSystem/manager_home.php?loggedIn');
                   </script>");
             }
          }
@@ -102,7 +102,7 @@ try
 
                echo ("<script>
                   // alert('Logging In...');
-                  window.location.assign('manager_home.php?loggedIn');
+                  window.location.assign('CoachSystem/manager_home.php?loggedIn');
                   </script>");
             }
          }
