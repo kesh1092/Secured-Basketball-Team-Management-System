@@ -1,8 +1,8 @@
-<?php
-session_start();
+<?php //code handles view and editing of Manager information, but not: loginID + Password
+session_start(); 
 if(empty($_SESSION['LoginID'])) //THIS MUST BE THE FIRST LINE EXECUTED. otherwise it wont work
 {
-   header("Location: index.php?redirected");  
+   header("Location: ../index.php?redirected");  
    exit();
 }
 
@@ -18,7 +18,7 @@ try {
    $link = connectDB();
 
 // Prep SQL statement to find the user name based on the LoginID 
-   $sql = "SELECT LoginID, Name, Birthday, Address, Email, PhoneNumber FROM Manager WHERE ID = ".$ID;
+   $sql = "SELECT LoginID, Name, Birthday, Address, Email, PhoneNumber, Password FROM Manager WHERE ID = ".$ID;
 
 // execute the sql statement
    if($result=mysqli_query($link,$sql)) {
@@ -31,59 +31,12 @@ try {
          $Address = $row['Address'];
          $Email = $row['Email'];
          $PhoneNumber = $row['PhoneNumber'];
-      }        
-   }
-
-
-// Prep SQL statement to find the user name based on the LoginID 
-   $sql2 = "SELECT Year, TotalPoints, ASPG FROM Stats WHERE ID = ".$ID;
-
-// execute the sql statement
-   if($result2=mysqli_query($link,$sql2)) {
-
-// from the sql results, assign the LoginID that returned to the $LoginID variable 
-      while($row = mysqli_fetch_assoc($result2)) {
-         $Year = $row['Year'];
-         $TotalPoints = $row['TotalPoints'];
-         $ASPG = $row['ASPG'];
-      }        
-   }
-
-
-// Prep SQL statement to find the user name based on the LoginID 
-   $sql3 = "SELECT TrainingName FROM AssignTraining WHERE ID = ".$ID;
-
-// execute the sql statement
-   if($result3=mysqli_query($link,$sql3)) {
-
-// from the sql results, assign the LoginID that returned to the $LoginID variable 
-      while($row = mysqli_fetch_assoc($result3)) {
-         $TrainingName = $row['TrainingName'];
-      }        
-   }
-
-// Prep SQL statement to find the user name based on the LoginID 
-   $sql4 = "SELECT Instruction, TimePeriodinHour FROM Training WHERE TrainingName = ".$TrainingName;
-
-// execute the sql statement
-   if($result4=mysqli_query($link,$sql4)) {
-
-// from the sql results, assign the LoginID that returned to the $LoginID variable 
-      while($row = mysqli_fetch_assoc($result4)) {
-         $Instruction = $row['Instruction'];
-         $TimePeriodinHour = $row['TimePeriodinHour'];
+         $Password = $row['Password'];
       }        
    }
 
 
 
-// Return Status to User
-   if($LoginID == false) {
-      $message = 'Access Error';
-   }
-   else {
-      $NOICE = 'NNNNOIICEEEEEE';
-   }
 }
 
 // if something goes wrong, return the following error
@@ -100,13 +53,24 @@ catch (Exception $e) {
 
 <html>
 <head>
-   <title>Coach Info</title>
+   <title>Manager Info</title>
    <link href="styles.css" rel="stylesheet" type="text/css"
 </head>
 
 <body>
-   <h1><br><center><u>Coach Info</u></center></h1>
+   <h1><br><center><u>Manager Info</u></center></h1>
    <h2></h2>
+
+   <form action="manager_home.php" method="post">
+      <p> 
+         <input type="submit" value="Manager Home" />
+      </p>
+   </form>
+
+
+
+
+
    <form action="update_manager_info_functions.php" method="post">
       <fieldset style = "Color: #000000; border-color: #2645c1; border-width: 10px; border-style: solid;">
 
@@ -157,6 +121,12 @@ catch (Exception $e) {
 </p>
 
 
+<p>
+   <label>Password</label>
+   <input type="date" name="Password" value="<?php echo $Password;?>" required/>
+</p>
+
+
 <p> 
    <input type="submit" value="Submit Changes" />
 </p>
@@ -174,20 +144,12 @@ catch (Exception $e) {
 </p>
 -->
 
+
 </fieldset>
 </form>
 
 
-<form action="password_loginID.php" method="post">
-   <p> 
-      <input type="submit" value="Manage ID/Pass" />
-   </p>
-</form>
-
-
-
 
 </body>
-
 </html>
 

@@ -38,7 +38,7 @@ $ID = $_SESSION['ID'];
    <input type="submit" value="Manager Info"/>
 </form>
 <form action="request_player_info.php" method="post">
-   <input type="submit" value="Request Player Info"/>
+   <input type="submit" value="Players Stats"/>
 </form>
 <form action="request_training.php" method="post">
    <input type="submit" value="Training Menu"/>
