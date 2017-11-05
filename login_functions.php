@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once('config.php');
-require_once('SQLFunctions.php');
 
 
 $LoginID =  $_POST['LoginID']; //passed on from login.php
@@ -41,12 +40,12 @@ try
                   $_SESSION['ID'] = -1;
 
                $ID = $_SESSION['ID'];
-               echo 'id2: '. $ID. '<br>';
+               // echo 'id2: '. $ID. '<br>';
 
 
                $_SESSION['LoginID'] = $LoginID;      
 
-               echo '<br>logged in<br>';
+               // echo '<sbr>logged in<br>';
                mysqli_close($link);
 
                echo ("<script>
@@ -93,7 +92,7 @@ try
                   $_SESSION['ID'] = -1;
 
                $ID = $_SESSION['ID'];
-               echo 'id2: '. $ID. '<br>';
+               // echo 'id2: '. $ID. '<br>';
 
 
                $_SESSION['LoginID'] = $LoginID;      

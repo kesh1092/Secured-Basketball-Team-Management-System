@@ -1,6 +1,6 @@
 <?php
 
-include('../config.php');
+include('../config_K_version.php');
 
 function connectDB() {
     $link = new mysqli(DB_HOST, DB_USER, DB_PWD, DB_NAME);
