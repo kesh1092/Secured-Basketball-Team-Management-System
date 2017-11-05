@@ -14,6 +14,7 @@ if(isset($_GET['loggedOut']))
 
 <html>
 <body>
+   
    Manager Sign up:
    <form action="CoachSystem/add_manager.php" method="post">
       <input type="submit" value="Sign Up" />
@@ -22,6 +23,18 @@ if(isset($_GET['loggedOut']))
    
    Manager log in:
    <form action="login.php" method="post">
+      <input type="submit" value="Login" />
+   </form>
+   <br>
+   
+   Player Sign up:
+   <form action="PlayerSystem/AddUser.php" method="post">
+      <input type="submit" value="Sign Up" />
+   </form>
+   <br>
+   
+   Player log in:
+   <form action="PlayerSystem/Login.php" method="post">
       <input type="submit" value="Login" />
    </form>
 

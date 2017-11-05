@@ -40,4 +40,6 @@ else {
   <a href="Logout.php">Log Off</a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="ChangePassword.php">Change Password</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="../index.php">Home</a>
 </div> 

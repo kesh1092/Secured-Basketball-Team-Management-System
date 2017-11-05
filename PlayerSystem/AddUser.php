@@ -15,6 +15,8 @@ session_start();
   <a href="Logout.php">Log Off</a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="ChangePassword.php">Change Password</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="../index.php">Home</a>
 </div> 
 
 <html>
@@ -76,8 +78,8 @@ session_start();
     <p>
       <label>Player Position</label>
         <select name="PlayPos">
-          <option value="point gaurd" selected>point gaurd</option>
-          <option value="shooting gaurd">shooting gaurd</option>
+          <option value="point guard" selected>point guard</option>
+          <option value="shooting guard">shooting guard</option>
           <option value="small forward">small forward</option>
           <option value="power forward">power forward</option>
           <option value="center">center</option>

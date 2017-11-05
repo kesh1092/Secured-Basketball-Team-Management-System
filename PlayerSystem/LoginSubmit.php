@@ -33,15 +33,16 @@ else
     $Password = filter_var($_POST['Password'], FILTER_SANITIZE_STRING);
 
     // Encrypt password with sha1 
-    $Password = sha1( $Password );
+    // $Password = sha1( $Password );
     
     try
     {
          //Connect to CRUD Database  mysqli(Server,User,Password,Database) 
         $link = connectDB();
-
+        
+        
         // Prep SQL statement which will compare the user credentials with what is stored in the database 
-        $sql = "SELECT ID FROM Player WHERE LoginID = '".$LoginID."' AND Password = '".$Password."'";
+        $sql = "SELECT ID FROM Player WHERE LoginID = '".$LoginID."' AND RequestStatus = 'Accepted' AND Password = '".$Password."'";
         //echo $sql."<br>"; 
         
         //Run the query 

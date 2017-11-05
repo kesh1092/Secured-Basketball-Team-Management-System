@@ -71,7 +71,7 @@ function f_tableExists(mysqli $link, $tablename, $database = false) {
                                 FROM information_schema.tables
                                 WHERE table_schema = '$database'
                                 AND table_name = '$tablename'");
-    echo '<br>Table Exists: '.($res->num_rows);
+    //echo '<br>Table Exists: '.($res->num_rows);
     return $res->num_rows == 1;
 }
 

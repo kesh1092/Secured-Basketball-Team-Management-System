@@ -29,7 +29,7 @@ else
 
     // Encrypt with password with sha1, a cryptographic hash function   
     // Never store plain text passwords in the database 
-    $NewPassword = sha1( $NewPassword );
+    // $NewPassword = sha1( $NewPassword );
     
     
     try

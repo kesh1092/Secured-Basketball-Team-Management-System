@@ -1,0 +1,105 @@
+[05-Nov-2017 02:45:29 UTC] PHP Fatal error:  Call to undefined function connectDB() in /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php on line 34
+[05-Nov-2017 02:45:29 UTC] PHP Stack trace:
+[05-Nov-2017 02:45:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:21 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 02:49:21 UTC] PHP Stack trace:
+[05-Nov-2017 02:49:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:21 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:4
+[05-Nov-2017 02:49:21 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 02:49:21 UTC] PHP Stack trace:
+[05-Nov-2017 02:49:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:21 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:4
+[05-Nov-2017 02:49:21 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php on line 67
+[05-Nov-2017 02:49:21 UTC] PHP Stack trace:
+[05-Nov-2017 02:49:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:21 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:67
+[05-Nov-2017 02:49:21 UTC] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php on line 68
+[05-Nov-2017 02:49:21 UTC] PHP Stack trace:
+[05-Nov-2017 02:49:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:21 UTC] PHP   2. mysqli_error() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:68
+[05-Nov-2017 02:49:21 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php on line 72
+[05-Nov-2017 02:49:21 UTC] PHP Stack trace:
+[05-Nov-2017 02:49:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:21 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:72
+[05-Nov-2017 02:49:21 UTC] PHP Warning:  mysqli_error(): Couldn't fetch mysqli in /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php on line 73
+[05-Nov-2017 02:49:21 UTC] PHP Stack trace:
+[05-Nov-2017 02:49:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:21 UTC] PHP   2. mysqli_error() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:73
+[05-Nov-2017 02:49:21 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php on line 75
+[05-Nov-2017 02:49:21 UTC] PHP Stack trace:
+[05-Nov-2017 02:49:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:21 UTC] PHP   2. mysqli->query() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:75
+[05-Nov-2017 02:49:21 UTC] PHP Warning:  mysqli_close(): Couldn't fetch mysqli in /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php on line 84
+[05-Nov-2017 02:49:21 UTC] PHP Stack trace:
+[05-Nov-2017 02:49:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:21 UTC] PHP   2. mysqli_close() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:84
+[05-Nov-2017 02:49:56 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 02:49:56 UTC] PHP Stack trace:
+[05-Nov-2017 02:49:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:56 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:4
+[05-Nov-2017 02:49:56 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 02:49:56 UTC] PHP Stack trace:
+[05-Nov-2017 02:49:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:0
+[05-Nov-2017 02:49:56 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/add_manager_functions.php:4
+[05-Nov-2017 02:51:23 UTC] PHP Fatal error:  Call to undefined function connectDB() in /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php on line 18
+[05-Nov-2017 02:51:23 UTC] PHP Stack trace:
+[05-Nov-2017 02:51:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php:0
+[05-Nov-2017 02:52:28 UTC] PHP Fatal error:  Call to undefined function connectDB() in /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php on line 18
+[05-Nov-2017 02:52:28 UTC] PHP Stack trace:
+[05-Nov-2017 02:52:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php:0
+[05-Nov-2017 02:52:31 UTC] PHP Fatal error:  Call to undefined function connectDB() in /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php on line 18
+[05-Nov-2017 02:52:31 UTC] PHP Stack trace:
+[05-Nov-2017 02:52:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php:0
+[05-Nov-2017 02:52:32 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 02:52:32 UTC] PHP Stack trace:
+[05-Nov-2017 02:52:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:0
+[05-Nov-2017 02:52:32 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:3
+[05-Nov-2017 02:52:32 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 02:52:32 UTC] PHP Stack trace:
+[05-Nov-2017 02:52:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:0
+[05-Nov-2017 02:52:32 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:3
+[05-Nov-2017 02:52:33 UTC] PHP Fatal error:  Call to undefined function connectDB() in /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php on line 18
+[05-Nov-2017 02:52:33 UTC] PHP Stack trace:
+[05-Nov-2017 02:52:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php:0
+[05-Nov-2017 02:52:52 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 02:52:52 UTC] PHP Stack trace:
+[05-Nov-2017 02:52:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php:0
+[05-Nov-2017 02:52:52 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php:3
+[05-Nov-2017 02:52:52 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 02:52:52 UTC] PHP Stack trace:
+[05-Nov-2017 02:52:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php:0
+[05-Nov-2017 02:52:52 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/view_manager_info.php:3
+[05-Nov-2017 02:53:14 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 02:53:14 UTC] PHP Stack trace:
+[05-Nov-2017 02:53:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:0
+[05-Nov-2017 02:53:14 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:3
+[05-Nov-2017 02:53:14 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 02:53:14 UTC] PHP Stack trace:
+[05-Nov-2017 02:53:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:0
+[05-Nov-2017 02:53:14 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:3
+[05-Nov-2017 03:09:34 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 03:09:34 UTC] PHP Stack trace:
+[05-Nov-2017 03:09:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:0
+[05-Nov-2017 03:09:34 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:3
+[05-Nov-2017 03:09:34 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/Phase2/CoachSystem/SQLFunctions.php on line 3
+[05-Nov-2017 03:09:34 UTC] PHP Stack trace:
+[05-Nov-2017 03:09:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:0
+[05-Nov-2017 03:09:34 UTC] PHP   2. require_once() /home/ubuntu/workspace/Phase2/CoachSystem/manager_home.php:3
+[05-Nov-2017 03:21:08 UTC] PHP Warning:  mysql_error() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/Phase2/CoachSystem/playerRequests.php on line 50
+[05-Nov-2017 03:21:08 UTC] PHP Stack trace:
+[05-Nov-2017 03:21:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/playerRequests.php:0
+[05-Nov-2017 03:21:08 UTC] PHP   2. mysql_error() /home/ubuntu/workspace/Phase2/CoachSystem/playerRequests.php:50
+[05-Nov-2017 03:22:33 UTC] PHP Warning:  mysql_error() expects parameter 1 to be resource, object given in /home/ubuntu/workspace/Phase2/CoachSystem/playerRequests.php on line 50
+[05-Nov-2017 03:22:33 UTC] PHP Stack trace:
+[05-Nov-2017 03:22:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/playerRequests.php:0
+[05-Nov-2017 03:22:33 UTC] PHP   2. mysql_error() /home/ubuntu/workspace/Phase2/CoachSystem/playerRequests.php:50
+[05-Nov-2017 04:16:41 UTC] PHP Warning:  mysqli_query(): Empty query in /home/ubuntu/workspace/Phase2/CoachSystem/playerRequests.php on line 16
+[05-Nov-2017 04:16:41 UTC] PHP Stack trace:
+[05-Nov-2017 04:16:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/playerRequests.php:0
+[05-Nov-2017 04:16:41 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/Phase2/CoachSystem/playerRequests.php:16
+[05-Nov-2017 04:40:44 UTC] PHP Warning:  include(session.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/Phase2/CoachSystem/playerRequestsSubmit.php on line 2
+[05-Nov-2017 04:40:44 UTC] PHP Stack trace:
+[05-Nov-2017 04:40:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/playerRequestsSubmit.php:0
+[05-Nov-2017 04:40:44 UTC] PHP Warning:  include(): Failed opening 'session.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/Phase2/CoachSystem/playerRequestsSubmit.php on line 2
+[05-Nov-2017 04:40:44 UTC] PHP Stack trace:
+[05-Nov-2017 04:40:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/Phase2/CoachSystem/playerRequestsSubmit.php:0

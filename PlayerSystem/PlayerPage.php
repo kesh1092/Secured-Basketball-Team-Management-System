@@ -65,7 +65,7 @@ require_once('SQLFunctions.php');
         
         
         // Prep SQL statement
-        $sql4 = "SELECT Instruction, TimePeriodinHour FROM Training WHERE TrainingName = ".$TrainingName;
+        $sql4 = "SELECT Instruction, TimePeriodinHour FROM Training WHERE TrainingName = '". $TrainingName . "';";
         
         // execute the sql statement
         if($result4=mysqli_query($link,$sql4)) {
@@ -141,8 +141,8 @@ require_once('SQLFunctions.php');
       
       <?php if ($PlayPos == "center") { ?>  
         <select name="PlayPos">
-          <option value="point gaurd">point gaurd</option>
-          <option value="shooting gaurd">shooting gaurd</option>
+          <option value="point guard">point guard</option>
+          <option value="shooting guard">shooting guard</option>
           <option value="small forward">small forward</option>
           <option value="power forward">power forward</option>
           <option value="center" selected>center</option>
@@ -151,8 +151,8 @@ require_once('SQLFunctions.php');
       
       <?php if ($PlayPos == "power forward") { ?>  
         <select name="PlayPos">
-          <option value="point gaurd">point gaurd</option>
-          <option value="shooting gaurd">shooting gaurd</option>
+          <option value="point guard">point guard</option>
+          <option value="shooting guard">shooting guard</option>
           <option value="small forward">small forward</option>
           <option value="power forward" selected>power forward</option>
           <option value="center">center</option>
@@ -161,28 +161,28 @@ require_once('SQLFunctions.php');
       
       <?php if ($PlayPos == "small forward") { ?>  
         <select name="PlayPos">
-          <option value="point gaurd">point gaurd</option>
-          <option value="shooting gaurd">shooting gaurd</option>
+          <option value="point guard">point guard</option>
+          <option value="shooting guard">shooting guard</option>
           <option value="small forward" selected>small forward</option>
           <option value="power forward">power forward</option>
           <option value="center">center</option>
         </select> 
       <?php } ?>  
       
-      <?php if ($PlayPos == "shooting gaurd") { ?>  
+      <?php if ($PlayPos == "shooting guard") { ?>  
         <select name="PlayPos">
-          <option value="point gaurd">point gaurd</option>
-          <option value="shooting gaurd" selected>shooting gaurd</option>
+          <option value="point guard">point guard</option>
+          <option value="shooting guard" selected>shooting guard</option>
           <option value="small forward">small forward</option>
           <option value="power forward">power forward</option>
           <option value="center">center</option>
         </select> 
       <?php } ?>
       
-      <?php if ($PlayPos == "point gaurd") { ?>  
+      <?php if ($PlayPos == "point guard") { ?>  
         <select name="PlayPos">
-          <option value="point gaurd" selected>point gaurd</option>
-          <option value="shooting gaurd">shooting gaurd</option>
+          <option value="point guard" selected>point guard</option>
+          <option value="shooting guard">shooting guard</option>
           <option value="small forward">small forward</option>
           <option value="power forward">power forward</option>
           <option value="center">center</option>
@@ -205,7 +205,7 @@ require_once('SQLFunctions.php');
     
     <p>
         <h3><u>Trainings:</u></h3>
-        <label>Training Name: <?php echo $TrainingName;?> <br> Instruction: <?php echo $Instruction;?> <br> Length: <?php echo $TimePeriodinHour;?> hours</label>
+        <label>Training Name: <?php echo $TrainingName;?> <br> Instruction: <?php echo $Instruction;?> <br> Length: <?php echo $TimePeriodinHour;?> hour(s)</label>
     </p>
     
     

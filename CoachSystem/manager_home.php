@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require_once('SQLFunctions.php');
 if(empty($_SESSION['LoginID'])) //THIS MUST BE THE FIRST LINE EXECUTED. otherwise it wont work
 {
    header("Location: ../index.php?redirected");  
@@ -17,7 +18,7 @@ if(isset($_GET['loggedIn']))
    echo 'logged in as: '. $LoginID . ".<br>"; 
 
 
-// $ID = $_SESSION['ID'];
+$ID = $_SESSION['ID'];
 // echo 'id: '. $ID. '<br>';
 // echo 'LoginID: '. $_SESSION['LoginID'] . ".<br>"; 
 // print_r($_SESSION);
@@ -37,21 +38,21 @@ if(isset($_GET['loggedIn']))
 <form action="view_manager_info.php" method="post">
    <input type="submit" value="Manager Info"/>
 </form>
-<!-- <form action="request_player_info.php" method="post">
-   <input type="submit" value="Players Stats"/>
+<form action="request_player_info.php" method="post">
+   <input type="submit" value="Request Player Info"/>
 </form>
- -->
- <form action="training_files/view_trainings.php" method="post">
-   <input type="submit" value="Trainings"/>
+<form action="request_training.php" method="post">
+   <input type="submit" value="Training Menu"/>
 </form>
-<!-- <form action="request_games.php" method="post">
+<form action="request_games.php" method="post">
    <input type="submit" value="Games Menu"/>
 </form>
- -->
-<!--  <h3>approve player login change requests goes here</h3>
+<form action="playerRequests.php" method="post">
+   <input type="submit" value="See Player Requests"/>
+</form>
 <form action="../index.php?loggedOut" method="post">
    <input type="submit" value="Logout"/>    
-</form> -->
+</form>
 
 
 </html>

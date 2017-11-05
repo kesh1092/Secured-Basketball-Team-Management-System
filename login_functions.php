@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('config.php');
+require_once('SQLFunctions.php');
 
 
 $LoginID =  $_POST['LoginID']; //passed on from login.php

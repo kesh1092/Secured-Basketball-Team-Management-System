@@ -14,14 +14,13 @@ $Birthday = $_POST['Birthday'];
 $Address = filter_var($_POST['Address'], FILTER_SANITIZE_STRING);
 $Email = filter_var($_POST['Email'], FILTER_SANITIZE_STRING);
 $PhoneNumber = filter_var($_POST['PhoneNumber'], FILTER_SANITIZE_STRING);
-$Password = filter_var($_POST['Password'], FILTER_SANITIZE_STRING);
 
 try
 {
    $link = connectDB();
 
 // Prepare the sql insert statement
-   $sql = "UPDATE Manager SET Name = '".$Name."', Birthday = '".$Birthday."', Address = '".$Address."', Email = '".$Email."', PhoneNumber = '".$PhoneNumber."', Password = '".$Password."' WHERE LoginID = '".$LoginID."'";
+   $sql = "UPDATE Manager SET Name = '".$Name."', Birthday = '".$Birthday."', Address = '".$Address."', Email = '".$Email."', PhoneNumber = '".$PhoneNumber."' WHERE LoginID = '".$LoginID."'";
    if (mysqli_query($link, $sql)) {
       $message = 'Edited Manager';
    } else { 
