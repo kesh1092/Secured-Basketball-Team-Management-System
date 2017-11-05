@@ -85,4 +85,7 @@ session_start();
     <!-- Message is a variable that was populated previously based on the php above  -->    
     <p><?php echo $message; ?>
   </body>
+  <form action="playerRequests.php" method="post">
+     <input type="submit" value="Return"/>
+  </form>
 </html>

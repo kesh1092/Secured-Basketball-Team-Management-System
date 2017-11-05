@@ -11,15 +11,16 @@ include('../../SQLFunctions.php');
     //if(!f_tableExists($link, $table, DB_NAME)){
     //    die('<br>Destination table does not exist: ' .$table);
     //}
+    
+    $Name=$_POST['Name'];
 
     //$sql = "SELECT * from $table WHERE RequestStatus = 'Pending'";
-    $sql="SELECT * FROM Player ORDER BY Player.Name ASC";
+    $sql="SELECT * FROM Player WHERE Name='".$Name."'";
     // echo '<br>sql :' .$sql;
     
     if($result = mysqli_query($link, $sql)){
          
-         echo '<h1 align="center">View All Player Information</h1>';
-         //echo '<body><p>Only Players that have recorded stats are listed.</p></body>';
+         echo '<h1 align="center">All Players Named: "'.$Name.'"</h1>';
           
           echo '<table align="center" style="width:100%">
             <tr>
@@ -68,7 +69,7 @@ include('../../SQLFunctions.php');
 
 <html>
 <form action="request_player_info.php" method="post">
-	<input type="submit" value="Return"/>
+	<input type="submit" value="Return To Player Info Page"/>
 </form>
 
 </html>

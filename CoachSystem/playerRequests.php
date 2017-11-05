@@ -86,4 +86,8 @@ include('../SQLFunctions.php');
   </fieldset>
 </form>
 </body>
+
+<form action="manager_home.php" method="post">
+   <input type="submit" value="Home"/>
+</form>
 </html>

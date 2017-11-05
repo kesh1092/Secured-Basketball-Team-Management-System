@@ -37,10 +37,9 @@ if(isset($_GET['loggedIn']))
 <form action="view_manager_info.php" method="post">
    <input type="submit" value="Manager Info"/>
 </form>
-<!-- <form action="request_player_info.php" method="post">
-   <input type="submit" value="Players Stats"/>
+<form action="player/request_player_info.php" method="post">
+   <input type="submit" value="Player Information"/>
 </form>
- -->
  <form action="training_files/view_trainings.php" method="post">
    <input type="submit" value="Trainings"/>
 </form>
