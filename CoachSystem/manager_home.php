@@ -48,7 +48,10 @@ if(isset($_GET['loggedIn']))
    <input type="submit" value="Games Menu"/>
 </form>
  -->
- <h3>approve player login change requests goes here</h3>
+ <!--<h3>approve player login change requests goes here</h3>-->
+ <form action="playerRequests.php" method="post">
+   <input type="submit" value="View Player Login Requests"/>
+ </form>
 <form action="../index.php?loggedOut" method="post">
    <input type="submit" value="Logout"/>    
 </form>

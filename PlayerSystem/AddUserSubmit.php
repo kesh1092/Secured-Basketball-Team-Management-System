@@ -34,7 +34,7 @@ else
     $Address = filter_var($_POST['Address'], FILTER_SANITIZE_STRING);
     $Email = filter_var($_POST['Email'], FILTER_SANITIZE_STRING);
     $PhoneNumber = filter_var($_POST['PhoneNumber'], FILTER_SANITIZE_STRING);
-    $PlayPos = filter_var($_POST['PlayPos'], FILTER_SANITIZE_STRING);
+    $PlayerPos = filter_var($_POST['PlayerPos'], FILTER_SANITIZE_STRING);
     $RequestStatus= "Pending";
     
 
@@ -56,7 +56,7 @@ else
               $message = "LoginID already exists";
             } else {
               // Prepare the sql insert statement  
-              $sql = "INSERT INTO Player (LoginID, Password, Name, Birthday, Address, Email, PhoneNumber, PlayPos, RequestStatus) VALUES ('".$LoginID."', '".$Password."', '".$Name."', '".$Birthday."', '".$Address."', '".$Email."', '".$PhoneNumber."', '".$PlayPos."', '".$RequestStatus."')";
+              $sql = "INSERT INTO Player (LoginID, Password, Name, Birthday, Address, Email, PhoneNumber, PlayerPos, RequestStatus) VALUES ('".$LoginID."', '".$Password."', '".$Name."', '".$Birthday."', '".$Address."', '".$Email."', '".$PhoneNumber."', '".$PlayerPos."', '".$RequestStatus."')";
               if (mysqli_query($link, $sql)) {
                 $message = 'New user added';
               } else { echo  "<br>Error: " . $sql . "<br>" . mysqli_error($link);  }

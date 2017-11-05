@@ -24,19 +24,19 @@ if(isset($_GET['badID']))
 
          <p>
             <label>LoginID</label>
-            <input type="text" name="LoginID" value="" maxlength="16" required/>
+            <input type="text" name="LoginID" value="" minlength="4" maxlength="16" required/>
             <i>(4-16 characters)</i>
          </p>
 
          <p>
             <label>Password</label>
-            <input type="password" name="Password" value="" maxlength="8" required/>
+            <input type="password" name="Password" value="" minlength ="4" maxlength="8" required/>
             <i>(4-8 characters)</i>
          </p>
 
          <p>
             <label>Name</label>
-            <input type="text" name="Name" value="" maxlength="64" required/>
+            <input type="text" name="Name" value="" minlength="4" maxlength="64" required/>
             <i>(4-64 characters)</i>
          </p>
 
@@ -48,20 +48,20 @@ if(isset($_GET['badID']))
 
          <p>
             <label>Address</label>
-            <input type="text" name="Address" value="" maxlength="128" required/>
+            <input type="text" name="Address" value="" minlength="4" maxlength="128" required/>
             <i>(4-128 characters)</i>
          </p>
 
          <p>
             <label>Email</label>
-            <input type="text" name="Email" value="" maxlength="32" required/>
+            <input type="text" name="Email" value="" minlength="4" maxlength="32" required/>
             <i>(4-32 characters)</i>
          </p>
 
          <p>
             <label>Phone Number</label>
-            <input type="text" name="PhoneNumber" value="" minlength="10" maxlength="10" required/>
-            <i>(10 characters)</i>
+            <input type="number" name="PhoneNumber" value="" minlength="10" maxlength="10" required/>
+            <i>(10 characters, no dashes or parentheses)</i>
          </p>
 
          <p> 

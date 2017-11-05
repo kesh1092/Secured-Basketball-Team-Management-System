@@ -77,7 +77,8 @@ catch (Exception $e) {
 
 <p>
    <label>Name</label>
-   <input type="text" name="Name" value="<?php echo $Name;?>" maxlength="64" required/>
+   <input type="text" name="Name" value="<?php echo $Name;?>" minlength="4" maxlength="64" required/>
+   <i>(4-64 characters)</i>
 </p>
 
 
@@ -88,23 +89,26 @@ catch (Exception $e) {
 
 <p>
    <label>Address</label>
-   <input type="text" name="Address" value="<?php echo $Address;?>" maxlength="128" required/>
+   <input type="text" name="Address" value="<?php echo $Address;?>" minlength="4" maxlength="128" required/>
+   <i>(4-12 characters)</i>
 </p>
 
 <p>
    <label>Email</label>
-   <input type="text" name="Email" value="<?php echo $Email;?>" maxlength="32" required/>
+   <input type="text" name="Email" value="<?php echo $Email;?>" minlength="4" maxlength="32" required/>
+   <i>(4-32 characters)</i>
 </p>
 
 <p>
    <label>Phone Number</label>
-   <input type="text" name="PhoneNumber" value="<?php echo $PhoneNumber;?>" minlength="10" maxlength="10" required/>
+   <input type="number" name="PhoneNumber" value="<?php echo $PhoneNumber;?>" minlength="10" maxlength="10" required/>
+   <i>(10 characters, no dashes or parentheses)</i>
 </p>
 
 
 <p>
    <label>Password</label>
-   <input type="date" name="Password" value="<?php echo $Password;?>" required/>
+   <input type="text" name="Password" value="<?php echo $Password;?>" required/>
 </p>
 
 <br>

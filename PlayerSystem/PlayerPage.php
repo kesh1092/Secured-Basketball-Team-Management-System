@@ -19,7 +19,7 @@ require_once('SQLFunctions.php');
         $link = connectDB();
 
         // Prep SQL statement to find the user name based on the user_id 
-        $sql = "SELECT LoginID, Name, Birthday, Address, Email, PhoneNumber, PlayPos FROM Player WHERE ID = ".$user_id;
+        $sql = "SELECT LoginID, Name, Birthday, Address, Email, PhoneNumber, PlayerPos FROM Player WHERE ID = ".$user_id;
         
         // execute the sql statement
         if($result=mysqli_query($link,$sql)) {
@@ -32,7 +32,7 @@ require_once('SQLFunctions.php');
             $Address = $row['Address'];
             $Email = $row['Email'];
             $PhoneNumber = $row['PhoneNumber'];
-            $PlayPos = $row['PlayPos'];
+            $PlayerPos = $row['PlayerPos'];
           }        
         }
         
@@ -109,7 +109,8 @@ require_once('SQLFunctions.php');
 
     <p>
       <label>Name</label>
-      <input type="text" name="Name" value="<?php echo $Name;?>" maxlength="64" required/>
+      <input type="text" name="Name" value="<?php echo $Name;?>" minlength="4" maxlength="64" required/>
+      <i>(4-64 characters)</i>
     </p>
     <p>
 
@@ -120,27 +121,30 @@ require_once('SQLFunctions.php');
     
     <p>
       <label>Address</label>
-      <input type="text" name="Address" value="<?php echo $Address;?>" maxlength="128" required/>
+      <input type="text" name="Address" value="<?php echo $Address;?>" minlength="4" maxlength="128" required/>
+      <i>(4-128 characters)</i>
     </p>
     <p>    
     
     <p>
       <label>Email</label>
-      <input type="text" name="Email" value="<?php echo $Email;?>" maxlength="32" required/>
+      <input type="text" name="Email" value="<?php echo $Email;?>" minlength="4" maxlength="32" required/>
+      <i>(4-32 characters)</>
     </p>
     <p>   
     
     <p>
       <label>Phone Number</label>
-      <input type="text" name="PhoneNumber" value="<?php echo $PhoneNumber;?>" minlength="10" maxlength="10" required/>
+      <input type="number" name="PhoneNumber" value="<?php echo $PhoneNumber;?>" minlength="10" maxlength="10" required/>
+      <i>(10 characters, no dashes or parentheses)</i>
     </p>
     <p> 
     
     <p>
       <label>Player Position</label>
       
-      <?php if ($PlayPos == "center") { ?>  
-        <select name="PlayPos">
+      <?php if ($PlayerPos == "center") { ?>  
+        <select name="PlayerPos">
           <option value="point guard">point guard</option>
           <option value="shooting guard">shooting guard</option>
           <option value="small forward">small forward</option>
@@ -149,8 +153,8 @@ require_once('SQLFunctions.php');
         </select> 
       <?php } ?>  
       
-      <?php if ($PlayPos == "power forward") { ?>  
-        <select name="PlayPos">
+      <?php if ($PlayerPos == "power forward") { ?>  
+        <select name="PlayerPos">
           <option value="point guard">point guard</option>
           <option value="shooting guard">shooting guard</option>
           <option value="small forward">small forward</option>
@@ -159,8 +163,8 @@ require_once('SQLFunctions.php');
         </select> 
       <?php } ?>
       
-      <?php if ($PlayPos == "small forward") { ?>  
-        <select name="PlayPos">
+      <?php if ($PlayerPos == "small forward") { ?>  
+        <select name="PlayerPos">
           <option value="point guard">point guard</option>
           <option value="shooting guard">shooting guard</option>
           <option value="small forward" selected>small forward</option>
@@ -169,8 +173,8 @@ require_once('SQLFunctions.php');
         </select> 
       <?php } ?>  
       
-      <?php if ($PlayPos == "shooting guard") { ?>  
-        <select name="PlayPos">
+      <?php if ($PlayerPos == "shooting guard") { ?>  
+        <select name="PlayerPos">
           <option value="point guard">point guard</option>
           <option value="shooting guard" selected>shooting guard</option>
           <option value="small forward">small forward</option>
@@ -179,8 +183,8 @@ require_once('SQLFunctions.php');
         </select> 
       <?php } ?>
       
-      <?php if ($PlayPos == "point guard") { ?>  
-        <select name="PlayPos">
+      <?php if ($PlayerPos == "point guard") { ?>  
+        <select name="PlayerPos">
           <option value="point guard" selected>point guard</option>
           <option value="shooting guard">shooting guard</option>
           <option value="small forward">small forward</option>

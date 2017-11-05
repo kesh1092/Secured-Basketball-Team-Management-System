@@ -18,7 +18,7 @@ session_start();
     $Address = filter_var($_POST['Address'], FILTER_SANITIZE_STRING);
     $Email = filter_var($_POST['Email'], FILTER_SANITIZE_STRING);
     $PhoneNumber = filter_var($_POST['PhoneNumber'], FILTER_SANITIZE_STRING);
-    $PlayPos = filter_var($_POST['PlayPos'], FILTER_SANITIZE_STRING);
+    $PlayerPos = filter_var($_POST['PlayerPos'], FILTER_SANITIZE_STRING);
     $ID = $_SESSION['user_id'];
 
     try
@@ -29,7 +29,7 @@ session_start();
 
 
         // Prepare the sql insert statement
-        $sql = "UPDATE Player SET Name = '".$Name."', Birthday = '".$Birthday."', Address = '".$Address."', Email = '".$Email."', PhoneNumber = '".$PhoneNumber."', PlayPos = '".$PlayPos."' WHERE ID = '".$ID."'";
+        $sql = "UPDATE Player SET Name = '".$Name."', Birthday = '".$Birthday."', Address = '".$Address."', Email = '".$Email."', PhoneNumber = '".$PhoneNumber."', PlayerPos = '".$PlayerPos."' WHERE ID = '".$ID."'";
         if (mysqli_query($link, $sql)) {
             $message = 'Edited Player';
         } else { 
