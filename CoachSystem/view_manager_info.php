@@ -25,7 +25,7 @@ try {
 
 // from the sql results, assign the LoginID that returned to the $LoginID variable 
       while($row = mysqli_fetch_assoc($result)) {
-         // $LoginID = $row['LoginID']; GET FROM $_SESSION
+// $LoginID = $row['LoginID']; GET FROM $_SESSION
          $Name = $row['Name'];
          $Birthday = $row['Birthday'];
          $Address = $row['Address'];
@@ -58,7 +58,7 @@ catch (Exception $e) {
 </head>
 
 <body>
-   <h1><br><center><u>Manager Info</u></center></h1>
+   <h1><center><u>Manager Info</u></center></h1>
    <h2></h2>
 
    <form action="manager_home.php" method="post">
@@ -126,7 +126,7 @@ catch (Exception $e) {
    <input type="date" name="Password" value="<?php echo $Password;?>" required/>
 </p>
 
-
+<br>
 <p> 
    <input type="submit" value="Submit Changes" />
 </p>

@@ -17,7 +17,7 @@ if(isset($_GET['loggedIn']))
    echo 'logged in as: '. $LoginID . ".<br>"; 
 
 
-$ID = $_SESSION['ID'];
+// $ID = $_SESSION['ID'];
 // echo 'id: '. $ID. '<br>';
 // echo 'LoginID: '. $_SESSION['LoginID'] . ".<br>"; 
 // print_r($_SESSION);
@@ -37,19 +37,21 @@ $ID = $_SESSION['ID'];
 <form action="view_manager_info.php" method="post">
    <input type="submit" value="Manager Info"/>
 </form>
-<form action="request_player_info.php" method="post">
+<!-- <form action="request_player_info.php" method="post">
    <input type="submit" value="Players Stats"/>
 </form>
-<form action="request_training.php" method="post">
-   <input type="submit" value="Training Menu"/>
+ -->
+ <form action="training_files/view_trainings.php" method="post">
+   <input type="submit" value="Trainings"/>
 </form>
-<form action="request_games.php" method="post">
+<!-- <form action="request_games.php" method="post">
    <input type="submit" value="Games Menu"/>
 </form>
-<h3>approve player login change requests goes here</h3>
+ -->
+<!--  <h3>approve player login change requests goes here</h3>
 <form action="../index.php?loggedOut" method="post">
    <input type="submit" value="Logout"/>    
-</form>
+</form> -->
 
 
 </html>
