@@ -19,6 +19,8 @@ include('../../SQLFunctions.php');
     $sqlB="SELECT * FROM Stats WHERE PlayerID=".$ID;
     // echo '<br>sql :' .$sql;
     
+    echo '<form align="left" action="request_player_info.php" method="post"><input type="submit" value="Return To Player Info Page"/></form>';
+    
     if($result = mysqli_query($link, $sql)){
          
          echo '<h1 align="left">Player Information</h1>';
@@ -56,8 +58,6 @@ include('../../SQLFunctions.php');
            echo '</table>';
         }
     }
-
-    echo '<form align="right" action="request_player_info.php" method="post"><input type="submit" value="Return To Player Info Page"/></form>';
     mysqli_close($link);
 
 ?>
