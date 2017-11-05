@@ -3,8 +3,13 @@
 session_start();
 
 if(!isset($_SESSION['user_id'])) {
-    
-    header("Location: Login.php");
+
+    // header("Location: Login.php");dont use this.
+    //use this:
+    echo ("<script>
+       window.location.assign('Login.php');
+       </script>");
+
     exit;
     
 }
@@ -14,8 +19,13 @@ else {
     /*Logout user after 10 minutes.*/
     if ($_SESSION['timeout'] + 10 * 60 < time()) {
         
-        header("Location: Logout.php");
-        
+        // header("Location: Logout.php");dont use this.
+        //use this:
+        echo ("<script>
+           window.location.assign('Logout.php');
+           </script>");
+
+
     }
     
     //User did not time out

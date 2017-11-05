@@ -51,15 +51,23 @@ else
           //assign the User_id from the database to the session user_id 
           while($row = mysqli_fetch_assoc($result)) {
             $user_id = $row['ID'];
-            //echo "<br>user_id=".$user_id; 
+            // echo "<br>user_id=".$user_id; 
 
             // Set the session user_id parameter  
             $_SESSION['user_id'] = $user_id;
             $_SESSION['timeout'] = time();
-            ob_start();
-            header("Location: PlayerPage.php");
-            exit();
+            // ob_start();
+
+
+            // header("Location: PlayerPage.php"); dont use this.
+            //use this:
+            echo ("<script>
+               window.location.assign('PlayerPage.php');
+               </script>");
+
+
             $message = 'You are now logged in';
+            exit();
           }        
         }
         if($user_id == false) {

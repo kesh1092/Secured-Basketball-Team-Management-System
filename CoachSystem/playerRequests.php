@@ -1,5 +1,5 @@
 <?php
-include('SQLFunctions.php');
+include('../SQLFunctions.php');
 
     $link = ConnectDB();
     
@@ -36,8 +36,8 @@ include('SQLFunctions.php');
             echo "<tr>";
               echo "<td>{$row[0]}</td>"; //ID
               echo "<td>{$row[1]}</td>"; //LoginID
-              echo "<td>{$row[2]}</td>"; //Password
-              echo "<td>{$row[3]}</td>"; //Name
+              echo "<td>{$row[3]}</td>"; //Password
+              echo "<td>{$row[2]}</td>"; //Name
               echo "<td>{$row[4]}</td>"; //Birthday
               echo "<td>{$row[5]}</td>"; //Address
               echo "<td>{$row[6]}</td>"; //Email
