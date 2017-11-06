@@ -26,7 +26,7 @@ if(empty($_SESSION['LoginID'])) //THIS MUST BE THE FIRST LINE EXECUTED. otherwis
 
 
 
-<form action="add_training_functions.php" method="post">
+<form action="#" method="post">
 	<fieldset style = "Color: #000000; border-color: #2645c1; border-width: 10px; border-style: solid;">
 
 		<h2 align="center">Add New Game </h2>
