@@ -16,6 +16,13 @@ if(empty($_SESSION['LoginID'])) //THIS MUST BE THE FIRST LINE EXECUTED. otherwis
 	</p>
 </form>
 
+<form action="alter_training.php" method="post">
+	<p> 
+		<input type="submit" value="Alter Trainings" />
+	</p>
+</form>
+
+
 
 <form action="add_training_functions.php" method="post">
 	<fieldset style = "Color: #000000; border-color: #2645c1; border-width: 10px; border-style: solid;">
@@ -66,7 +73,7 @@ if(empty($_SESSION['LoginID'])) //THIS MUST BE THE FIRST LINE EXECUTED. otherwis
 // $ID = $_SESSION['ID'];
 // echo 'id: '. $ID. '<br>';
 
-
+//VIEW TRAININGS CODE
 	try {
 // Connect to  Database
 		$link = connectDB();
