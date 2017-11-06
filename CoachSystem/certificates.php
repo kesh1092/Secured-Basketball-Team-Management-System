@@ -37,7 +37,7 @@ while($row = mysqli_fetch_assoc($result)){
         <h3>&nbsp;&nbsp;&nbsp;&nbsp;<u>Upload:</u></h3>
         
         &nbsp;&nbsp;&nbsp;&nbsp;
-        Select File:
+        Select File under 64KB & .JPG:
         <input type="file" name="f1">
         <br>
         <br>
