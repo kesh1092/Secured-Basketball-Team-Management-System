@@ -57,7 +57,7 @@ else {
   <title>Change Password</title>
 </head>
 
-<body>
+<body style = "Color: #000000; background-color:#afbfff;">
 <h2>Change Password for <?php echo $LoginID; ?></h2>
 <form action="ChangePasswordSubmit.php" method="post">
   <fieldset>

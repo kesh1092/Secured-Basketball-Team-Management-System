@@ -24,7 +24,7 @@ session_start();
   <title>Add New Player</title>
 </head>
 
-<body>
+<body style = "Color: #000000; background-color:#afbfff;">
 <h2>Add New Player</h2>
 <form action="AddUserSubmit.php" method="post">
   <fieldset>

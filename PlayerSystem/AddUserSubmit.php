@@ -88,7 +88,7 @@ else
   <head>
     <title>Add New Player</title>
   </head>
-  <body>
+  <body style = "Color: #000000; background-color:#afbfff;">
     <!-- Message is a variable that was populated previously based on the php above  -->    
     <p><?php echo $message; ?>
   </body>

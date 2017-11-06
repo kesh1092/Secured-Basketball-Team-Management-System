@@ -18,7 +18,7 @@
 <title>Player Login</title>
 </head>
 
-<body>
+<body style = "Color: #000000; background-color:#afbfff;">
   <h2>Player Login</h2>
   <form action="LoginSubmit.php" method="post">
   <fieldset>
