@@ -54,6 +54,10 @@ if(isset($_GET['loggedIn']))
  <form action="certificates.php" method="post">
    <input type="submit" value="Certificates"/>
  </form>
+  <form action="game_files/view_trainings.php" method="post">
+   <input type="submit" value="View Games"/>
+ </form>
+
 <form action="assignPlayerGames.php" method="post">
    <input type="submit" value="Assign Games to Players"/>
  </form>
