@@ -101,29 +101,29 @@ create table Play(
 
 
 INSERT INTO Player (LoginID, Name, Password, Birthday, Address, Email, PhoneNumber, PlayerPos, RequestStatus) VALUES
-    ('bobjones123', 'Bob Jones', 'GoNMSU', '1996/12/17', '123 Ponder Ave.', 'bobjones@nmsu.edu','575-43253','point guard', 'accepted'),
-    ('todrichard342', 'Tod Richard', 'Aggies13', '1995/10/14', '1232 Nickels Ave.', 'toddster@nmsu.edu','575-3333','shooting guard', 'accepted'),
-    ('jordanheith54', 'Jordan Heith', 'Tank34', '1997/11/28', '1222 Dover St.', 'jordanh@nmsu.edu','575-9843','small forward', 'pending'),
-    ('brownT321', 'Tim Brown', 'Bball32', '1996/02/09', '983 Holler St.', 'timmybro@nmsu.edu','575-4993','center', 'pending'),
-    ('qwer', 'Tim Brown', 'qwer', '1996/02/09', '983 Holler St.', 'timmybro@nmsu.edu','575-4993','center', 'accepted'),
-    ('carterdavis2', 'Carter Davis', 'LetsGoAg', '1997/01/13', '894 Wellington Ave.', 'cdavis@nmsu.edu','575-3613','power forward', 'pending');
+    ('bobjones123', 'Bob Jones', 'GoNMSU', '1996/12/17', '123 Ponder Ave.', 'bobjones@nmsu.edu','5754311253','point guard', 'accepted'),
+    ('todrichard342', 'Tod Richard', 'Aggies13', '1995/10/14', '1232 Nickels Ave.', 'toddster@nmsu.edu','5752323333','shooting guard', 'accepted'),
+    ('jordanheith54', 'Jordan Heith', 'Tank34', '1997/11/28', '1222 Dover St.', 'jordanh@nmsu.edu','5753239843','small forward', 'pending'),
+    ('brownT321', 'Tim Brown', 'Bball32', '1996/02/09', '983 Holler St.', 'timmybro@nmsu.edu','5754344993','center', 'pending'),
+    ('qwer', 'Tim Brown', 'qwer', '1996/02/09', '983 Holler St.', 'timmybro@nmsu.edu','5755454993','center', 'accepted'),
+    ('carterdavis2', 'Carter Davis', 'LetsGoAg', '1997/01/13', '894 Wellington Ave.', 'cdavis@nmsu.edu','5756563613','power forward', 'pending');
     
 
 INSERT INTO Manager (LoginID, Name, Password, Birthday, Address, Email, PhoneNumber) VALUES
-    ('jackhilton43', 'Jack Hiltion', 'Asked23', '1984/11/14', '320 E. Palmer Ct.', 'jackhilly@nmsu.edu','509-3213'),
-    ('dannyboy', 'Danny Borwick', 'Crimson3', '1982/04/15', '3214 Lemon Dr.', 'dannyyy@nmsu.edu','575-7953'),
-    ('nickvolker2', 'Nick Volker', 'Hola231', '1974/11/04', '1543 Doe St.', 'nickvolker@nmsu.edu','575-7743'),
-    ('pricedr', 'Price Drake', 'Manner4', '1979/03/11', '1121 Cabing St.', 'price84@nmsu.edu','575-2223'),
-    ('asdf', 'Price Drake', 'asdf', '1979/03/11', '1121 Cabing St.', 'price84@nmsu.edu','575-2223'),
-    ('jimmybeam44', 'Jimmy Beam', 'Yoyo328', '1988/02/05', '164 Kilmore Ave.', 'jimbeam@nmsu.edu','575-3613');
+    ('jackhilton43', 'Jack Hiltion', 'Asked23', '1984/11/14', '320 E. Palmer Ct.', 'jackhilly@nmsu.edu','5097673213'),
+    ('dannyboy', 'Danny Borwick', 'Crimson3', '1982/04/15', '3214 Lemon Dr.', 'dannyyy@nmsu.edu','5756657953'),
+    ('nickvolker2', 'Nick Volker', 'Hola231', '1974/11/04', '1543 Doe St.', 'nickvolker@nmsu.edu','5757777743'),
+    ('pricedr', 'Price Drake', 'Manner4', '1979/03/11', '1121 Cabing St.', 'price84@nmsu.edu','5758882223'),
+    ('asdf', 'Price Drake', 'asdf', '1979/03/11', '1121 Cabing St.', 'price84@nmsu.edu','5759992223'),
+    ('jimmybeam44', 'Jimmy Beam', 'Yoyo328', '1988/02/05', '164 Kilmore Ave.', 'jimbeam@nmsu.edu','5751013613');
     
     
 INSERT INTO Staff (ID, Name, Birthday, Address, Email, PhoneNumber, Title) VALUES
-    ('800600392', 'Tom Smith', '1998/12/15', '3628 Noice St.', 'tomsmith@nmsu.edu', '583-6953', 'Water Boy'),
-    ('800599343', 'Tiffany Smith', '1990/10/17', '343 Callaway St.', 'tiffsmith3@nmsu.edu', '575-4390', 'Janitor'),
-    ('800600574', 'Russell Johnson', '1987/11/18', '3728 Cameo St.', 'russjohnson212@nmsu.edu', '575-4393', 'Treasurer'),
-    ('800599432', 'Tyler Doon', '1984/10/20', '342 Cogger St.', 'doony@nmsu.edu', '575-4932', 'Hotdog Sales'),
-    ('800599633', 'Abby Labue', '1989/11/17', '343 Goon St.', 'abbylabue2@nmsu.edu', '575-4777', 'Ticket Sales');
+    ('800600392', 'Tom Smith', '1998/12/15', '3628 Noice St.', 'tomsmith@nmsu.edu', '5832346953', 'Water Boy'),
+    ('800599343', 'Tiffany Smith', '1990/10/17', '343 Callaway St.', 'tiffsmith3@nmsu.edu', '5753454390', 'Janitor'),
+    ('800600574', 'Russell Johnson', '1987/11/18', '3728 Cameo St.', 'russjohnson212@nmsu.edu', '5754564393', 'Treasurer'),
+    ('800599432', 'Tyler Doon', '1984/10/20', '342 Cogger St.', 'doony@nmsu.edu', '5755674932', 'Hotdog Sales'),
+    ('800599633', 'Abby Labue', '1989/11/17', '343 Goon St.', 'abbylabue2@nmsu.edu', '5756784777', 'Ticket Sales');
     
     
 INSERT INTO ManagerCertificate (ManagerID, CertificateID, Certificate) VALUES

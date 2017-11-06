@@ -23,9 +23,9 @@ session_start();
 
         if($AcceptOption == 'acceptOne'){
             // Prepare the sql insert statement
-            $sql = "UPDATE Player SET RequestStatus = 'Accepted' WHERE LoginID = '".$PassedUsername."'";
+            $sql = "UPDATE Player SET RequestStatus = 'accepted' WHERE LoginID = '".$PassedUsername."'";
             if (mysqli_query($link, $sql)) {
-                $message = 'Players accounts have been rejected and/or declined.';
+                $message = 'Bottom row player has been accepted.';
             } else { 
                 echo  "<br>Error: " . $sql . "<br>" . mysqli_error($link);
             }
@@ -33,9 +33,9 @@ session_start();
         
         else if($AcceptOption == 'declineOne'){
             // Prepare the sql insert statement
-            $sql = "UPDATE Player SET RequestStatus = 'Declined' WHERE LoginID = '".$PassedUsername."'";
+            $sql = "UPDATE Player SET RequestStatus = 'declined' WHERE LoginID = '".$PassedUsername."'";
             if (mysqli_query($link, $sql)) {
-                $message = 'Players accounts have been rejected and/or declined.';
+                $message = 'Bottom row player has been declined.';
             } else { 
                 echo  "<br>Error: " . $sql . "<br>" . mysqli_error($link);
             }
@@ -43,9 +43,9 @@ session_start();
         
         else if($AcceptOption == 'acceptAll'){
             // Prepare the sql insert statement
-            $sql = "UPDATE Player SET RequestStatus = 'Accepted' WHERE RequestStatus = 'Pending'";
+            $sql = "UPDATE Player SET RequestStatus = 'accepted' WHERE RequestStatus = 'Pending'";
             if (mysqli_query($link, $sql)) {
-                $message = 'Players accounts have been rejected and/or declined.';
+                $message = 'All players accounts have been accepted.';
             } else { 
                 echo  "<br>Error: " . $sql . "<br>" . mysqli_error($link);
             }
@@ -53,9 +53,9 @@ session_start();
         
         else if($AcceptOption == 'declineAll'){
             // Prepare the sql insert statement
-            $sql = "UPDATE Player SET RequestStatus = 'Declined' WHERE RequestStatus = 'Pending'";
+            $sql = "UPDATE Player SET RequestStatus = 'declined' WHERE RequestStatus = 'Pending'";
             if (mysqli_query($link, $sql)) {
-                $message = 'Players accounts have been rejected and/or declined.';
+                $message = 'All player accounts have been declined';
             } else { 
                 echo  "<br>Error: " . $sql . "<br>" . mysqli_error($link);
             }
