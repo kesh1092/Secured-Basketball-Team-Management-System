@@ -54,6 +54,9 @@ if(isset($_GET['loggedIn']))
  <form action="certificates.php" method="post">
    <input type="submit" value="Certificates"/>
  </form>
+<form action="assignPlayerGames.php" method="post">
+   <input type="submit" value="Assign Games to Players"/>
+ </form>
 <form action="../index.php?loggedOut" method="post">
    <input type="submit" value="Logout"/>    
 </form>
