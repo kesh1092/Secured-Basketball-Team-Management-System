@@ -31,8 +31,8 @@ if(isset($_GET['loggedIn']))
 
 
 <html>
-
-<h1 align="center">Manager Home</h1>
+<body style = "Color: #000000; background-color:#afbfff;">
+<h1 align="center"><u>Manager Home</u></h1>
 
 <form action="view_manager_info.php" method="post">
    <input type="submit" value="Manager Info"/>
@@ -51,9 +51,12 @@ if(isset($_GET['loggedIn']))
  <form action="playerRequests.php" method="post">
    <input type="submit" value="View Player Login Requests"/>
  </form>
+ <form action="certificates.php" method="post">
+   <input type="submit" value="Certificates"/>
+ </form>
 <form action="../index.php?loggedOut" method="post">
    <input type="submit" value="Logout"/>    
 </form>
 
-
+</body>
 </html>
