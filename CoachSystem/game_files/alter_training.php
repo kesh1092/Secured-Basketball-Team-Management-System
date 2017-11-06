@@ -59,8 +59,8 @@ if($result = mysqli_query($link, $sql)){
 
       <td align='center'>
          <body>
-
-            <form action="#" method="post">
+<!-- DELETE TRAINING -->
+            <form action="alter_training_functions.php" method="post">
 
                <input type="hidden" name="PASS" value="<?php echo $SelectedLoginID;?>">
                <input type="hidden" name="AcceptOption" value="declineOne">
@@ -70,7 +70,8 @@ if($result = mysqli_query($link, $sql)){
                </p>
             </form>
 
-            <form action="#" method="post">
+<!-- redirect to MODIFY TRAINING PAGE -->
+            <form action="edit_particular_training.php" method="post">
 
                <input type="hidden" name="PASS" value="<?php echo $SelectedLoginID;?>">
                <!-- <input type="hidden" name="AcceptOption" value="declineOne"> -->

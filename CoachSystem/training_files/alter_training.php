@@ -1,10 +1,12 @@
 <html>
 
 <?php
+if(isset($_GET['modifyError'])) 
+   echo 'Cant modify that training name. its already assigned to a player already.'; 
 
  
 if(isset($_GET['deleteError'])) 
-   echo 'Cant delete. That training is assigned to a player already.'; 
+   echo 'Cant delete. That Game is assigned to a player already.'; 
 ?>  
 
  

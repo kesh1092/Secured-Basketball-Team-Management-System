@@ -21,7 +21,13 @@ try
    if (mysqli_query($link, $sql)) {
       $message = 'Edited Manager';
    } else { 
-      echo  "<br>Error: " . $sql . "<br>" . mysqli_error($link);
+      // echo  "<br>Error: " . $sql . "<br>" . mysqli_error($link);
+
+      echo ("<script>
+         window.location.assign('alter_training.php?modifyError');         
+         </script>");
+
+
       exit();
    }
 
@@ -39,4 +45,4 @@ echo ("<script>
    </script>");
 
 
-?> 
+   ?> 

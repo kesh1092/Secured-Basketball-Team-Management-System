@@ -5,12 +5,12 @@ session_start();
 require_once('../../config.php');
 $LoginID = $_SESSION['LoginID'];
 
-$getTrainingName = filter_var($_POST['PASS'], FILTER_SANITIZE_STRING); 
+$getTrainingID = filter_var($_POST['PASS'], FILTER_SANITIZE_STRING); 
 
 if(isset($_GET['updated'])) 
-   $getTrainingName = $_GET['updated']; 
+   $getTrainingID = $_GET['updated']; 
 
-// echo "getTrainingName: ". $getTrainingName. '<br>';
+// echo "getTrainingID: ". $getTrainingID. '<br>';
 
 
 
@@ -20,16 +20,17 @@ try
    $link = connectDB();
 
 // Prep SQL statement to find the user name based on the LoginID 
-   $sql = "SELECT TrainingName, Instruction, TimePeriodinHour FROM Training WHERE TrainingName = '" .$getTrainingName. "'";
+   $sql = "SELECT Date, Result, PlayingVenue, OpponentTeam FROM Game WHERE GameID = '" .$getTrainingID. "'";
 
 // execute the sql statement
    if($result=mysqli_query($link,$sql)) {
 
 // from the sql results, assign the LoginID that returned to the $LoginID variable 
       while($row = mysqli_fetch_assoc($result)) {
-         $TrainingName = $row['TrainingName'];
-         $Instruction = $row['Instruction'];
-         $TimePeriodinHour = $row['TimePeriodinHour'];
+         $TrainingName = $row['Date'];
+         $Instruction = $row['Result'];
+         $TimePeriodinHour = $row['PlayingVenue'];
+         $OpponentTeam = $row['OpponentTeam'];
       }        
    }
 }
@@ -48,17 +49,17 @@ catch (Exception $e) {
 
 <html>
 <head>
-   <title>Edit Training</title>
+   <title>Edit Games</title>
    <link href="styles.css" rel="stylesheet" type="text/css"
 </head>
 
 <body>
-   <h1><center><u>Edit Training</u></center></h1>
+   <h1><center><u>Edit Games</u></center></h1>
 
 
    <form action="alter_training.php" method="post">
       <p> 
-         <input type="submit" value="List All Trainings" />
+         <input type="submit" value="List All Games" />
       </p>
    </form>
 
@@ -68,22 +69,30 @@ catch (Exception $e) {
 
       <fieldset style = "Color: #000000; border-color: #2645c1; border-width: 10px; border-style: solid;">
 
+
+         <input type="hidden" name="GameID" value="<?php echo $getTrainingID;?>">
+
          <p>
-            <label>Training Name: </label>
-            <input type="text" name="Name" value="<?php echo $TrainingName;?>" required>
+            <label>Date: </label>
+            <input type="date" name="Name" value="<?php echo $TrainingName;?>" required>
          </p>
 
-            <input type="hidden" name="OriginalTrainingName" value="<?php echo $getTrainingName;?>">
 
          <p>
-            <label>Instruction: </label>
-            <input type="date" name="Birthday" value="<?php echo $Instruction;?>" required/>
+            <label>Result: </label>
+            <input type="text" name="Birthday" value="<?php echo $Instruction;?>" required/>
          </p>
 
          <p>
-            <label>Time (hr): </label>
+            <label>Playing Venue: </label>
             <input type="text" name="Address" value="<?php echo $TimePeriodinHour;?>" required/>
          </p>
+
+         <p>
+            <label>Opponent Team: </label>
+            <input type="text" name="OpponentTeam" value="<?php echo $OpponentTeam;?>" required/>
+         </p>
+
 
 
          <p> 

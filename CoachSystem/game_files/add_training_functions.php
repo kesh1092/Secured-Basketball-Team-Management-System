@@ -16,7 +16,7 @@ try
    $link = connectDB();
 
 // Prepare the sql insert statement  
-   $sql = "INSERT INTO Game (Date, Result, PlayingVenue, OpponentTeam) VALUES ('".$TrainingName."', '".$Instruction."', '".$TimePeriodinHour."', '".$OpponentTeam."')";
+   $sql = "INSERT INTO Game (Date, Result, PlayingVenue, OpponentTeam) VALUES ('".$TrainingName."', '".$Instruction."', '".$TimePeriodinHour."', '".$OpponentTeam."');";
 
    if (!mysqli_query($link, $sql)) 
       { echo  "<br>Error: " . $sql . "<br>" . mysqli_error($link); exit();  }
@@ -30,7 +30,7 @@ try
    // if ($response->num_rows) { 
    //    $row = $response->fetch_assoc();
 // $_SESSION['GameID'] = $row["GameID"];
-   } 
+    
 // else
 //    $_SESSION['GameID'] = -1;        
 

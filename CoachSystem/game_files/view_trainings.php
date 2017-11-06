@@ -26,7 +26,7 @@ if(empty($_SESSION['LoginID'])) //THIS MUST BE THE FIRST LINE EXECUTED. otherwis
 
 
 
-<form action="#" method="post">
+<form action="add_training_functions.php" method="post">
 	<fieldset style = "Color: #000000; border-color: #2645c1; border-width: 10px; border-style: solid;">
 
 		<h2 align="center">Add New Game </h2>
@@ -97,7 +97,7 @@ if(empty($_SESSION['LoginID'])) //THIS MUST BE THE FIRST LINE EXECUTED. otherwis
 			<tr>
 			<td align="left"><b>Date</b></td>
 			<td align="center"><b>Result</b></td>
-			<td align="center"><b>Playing Venue</b></td></tr>
+			<td align="center"><b>Playing Venue</b></td>
 			<td align="center"><b>OpponentTeam</b></td></tr>';
 
 

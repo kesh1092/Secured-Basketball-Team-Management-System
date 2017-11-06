@@ -22,7 +22,7 @@ try
 
 
    if($AcceptOption == 'declineOne'){
-      $sql = "DELETE FROM Training WHERE TrainingName = '".$PassedUsername."'";
+      $sql = "DELETE FROM Game WHERE GameID = '".$PassedUsername."'";
 
       if (mysqli_query($link, $sql)) {
          $message = 'Players accounts have been rejected and/or declined.';

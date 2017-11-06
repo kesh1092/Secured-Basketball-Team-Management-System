@@ -77,8 +77,10 @@ create table AssignTraining(
     foreign key(TrainingName) references Training(TrainingName)
 );
 
+
+
 create table Game(
-    GameID int primary key ,
+    GameID int not null primary key auto_increment,
     Date date not null,
     Result enum('Win', 'Lose', 'Tie') not null, 
     PlayingVenue varchar(256) not null,
@@ -160,7 +162,7 @@ INSERT INTO AssignTraining (PlayerID, ManagerID, TrainingName) VALUES
     (5, 5, 'Sprints');
     
     
-INSERT INTO Game (GameID, Date, Result, Playingvenue, OpponentTeam) VALUES
+INSERT INTO Game (GameID, Date, Result, PlayingVenue, OpponentTeam) VALUES
     (1000, '2017/01/01', 'Tie', 'Russell Stadium', 'California Tech Eagles'),
     (1001, '2017/01/07', 'Tie', 'Tod Stadium', 'Texas Tech Raiders'),
     (1002, '2017/01/14', 'Tie', 'Larry Stadium', 'Montana State Elephants'),
