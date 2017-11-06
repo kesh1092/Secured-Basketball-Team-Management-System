@@ -5,6 +5,8 @@ if(empty($_SESSION['LoginID'])) //THIS MUST BE THE FIRST LINE EXECUTED. otherwis
 	header("Location: ../../index.php?redirected");  
 	exit();
 }
+
+
 ?>
 
 

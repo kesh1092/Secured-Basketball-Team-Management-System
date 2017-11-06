@@ -1,14 +1,20 @@
 <html>
 
 <?php
+
+ 
 if(isset($_GET['deleteError'])) 
    echo 'Cant delete. That training is assigned to a player already.'; 
-?>
+?>  
 
-
+ 
 <head>
    <title>Accept/Decline Player Pending Accounts</title>
 </head>
+
+
+<h1><center>Trainings</center></h1>
+
 
 <form action="view_trainings.php" method="post">
    <p> 
@@ -21,7 +27,7 @@ if(isset($_GET['deleteError']))
 
 <?php
 include('../../SQLFunctions.php');
-
+ 
 
 $link = ConnectDB();
 $table = Training;
@@ -42,17 +48,18 @@ if($result = mysqli_query($link, $sql)){
 
    while($row = mysqli_fetch_array($result)) 
    {
-      echo "<tr>";
-      ?>
+      session_start(); 
+
+      $SelectedLoginID = $row[0];
+       echo "<tr>";
+ ?>  <!-- END PHP -->
 
       <!-- HTML CODE resumes again -->
+
       <td align='center'>
          <body>
-            <h2></h2>
+
             <form action="alter_training_functions.php" method="post">
-               <?php
-               $SelectedLoginID = $row[0];
-               ?>
 
                <input type="hidden" name="PASS" value="<?php echo $SelectedLoginID;?>">
                <input type="hidden" name="AcceptOption" value="declineOne">
@@ -60,8 +67,16 @@ if($result = mysqli_query($link, $sql)){
                <p> 
                   <input type="submit" value="Delete"/>
                </p>
-
             </form>
+
+            <form action="edit_particular_training.php" method="post">
+
+               <input type="hidden" name="PASS" value="<?php echo $SelectedLoginID;?>">
+               <!-- <input type="hidden" name="AcceptOption" value="declineOne"> -->
+
+               <input type="submit" value="Modify"/>
+            </form>
+
          </body>
       </td>
 

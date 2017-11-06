@@ -22,10 +22,8 @@ try
 
 
    if($AcceptOption == 'declineOne'){
-// Prepare the sql insert statement
-// delete from Training where TrainingName = 'foo';
       $sql = "DELETE FROM Training WHERE TrainingName = '".$PassedUsername."'";
-      // $sql = "UPDATE Training SET RequestStatus = 'Declined' WHERE LoginID = '".$PassedUsername."'";
+
       if (mysqli_query($link, $sql)) {
          $message = 'Players accounts have been rejected and/or declined.';
       } else { 
@@ -37,11 +35,8 @@ try
       }
 
    }
-
-   else {
-
-      // echo  "No changes have been made.";
-   }
+   // else { echo  "No changes have been made.";  }
+   
    mysqli_close($link);
 
    echo ("<script>
