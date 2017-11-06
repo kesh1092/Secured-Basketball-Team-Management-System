@@ -101,7 +101,7 @@ catch (Exception $e) {
 
 <p>
    <label>Phone Number</label>
-   <input type="number" name="PhoneNumber" value="<?php echo $PhoneNumber;?>" minlength="10" maxlength="10" required/>
+   <input type="number" name="PhoneNumber" value="<?php echo $PhoneNumber;?>" min="1000000000" max="9999999999" required/>
    <i>(10 characters, no dashes or parentheses)</i>
 </p>
 

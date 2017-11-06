@@ -70,7 +70,7 @@ session_start();
     
     <p>
       <label>Phone Number</label>
-      <input type="number" name="PhoneNumber" value="" minlength="10" maxlength="10" required/>
+      <input type="number" name="PhoneNumber" value="" min="1000000000" max="9999999999" required/>
       <i>(10 characters)</i>
     </p>
     <p> 
