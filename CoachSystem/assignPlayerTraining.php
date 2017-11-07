@@ -1,35 +1,29 @@
-<?php
-
-include("../SQLFunctions.php");
-session_start();
-
-$Player = $_POST['assignPlayer'];
-$Training = $_POST['assignTraining'];
-$link = connectDB();
-
-echo "Assigned successful";
-
-$getPlayerID = "SELECT * FROM Player Where Name='$Player';" ;
-$result = mysqli_query($link, $getPlayerID);
+<php>
 
 
-while($row = mysqli_fetch_assoc($result)){
-$playerID = $row['ID'];
-}
+<html>
+    
+<form action="manager_home.php" method="post">
+   <input type="submit" value="Home"/>
+</form>
 
-$noice = $_SESSION['LoginID'];
-$sql = "SELECT * FROM Manager Where LoginID='$noice';" ;
-$result = mysqli_query($link, $sql);
+<h1 align="center">Assign a Training to a Player</h1>
 
-//  $playerID = $row['ID'];
+<h3></h3>Assign New Training By Player ID</h3>
+<form action="assignPlayerTrainings.php" method="post">
+    <br>
+	Player ID:<input type="number" name="PlayerID" required/> <i> (integer ID)</i>
+	<br>
+	<br>
+    TrainingName:<input type="text" name="TrainingName" required/> <i> (integer ID) </i>
+	<br>
+	<br>
+	<input type="submit" value="Assign"/>
+</form>
 
-while($row = mysqli_fetch_assoc($result)){
-    $ManagerID = $row['ID'];
-}
-$sql = "INSERT INTO Training VALUES ('".$playerID."','".$ManagerID."','".$Training."')";
+ 
 
-mysqli_query($link,$sql);
+<html>
 
 
-
-?>
+</php>

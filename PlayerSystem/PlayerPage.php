@@ -76,7 +76,27 @@ require_once('SQLFunctions.php');
           }        
         }
         
+        // Prep SQL statement
+        $sql5 = "SELECT ManagerID FROM AssignTraining WHERE PlayerID = ".$user_id;
         
+        // execute the sql statement
+        if($result5=mysqli_query($link,$sql5)) {
+            
+          while($row = mysqli_fetch_assoc($result5)) {
+            $ManagerID = $row['ManagerID'];
+          }        
+        }
+        
+        // Prep SQL statement
+        $sql6 = "SELECT Name FROM Manager WHERE ID = ".$user_id;
+        
+        // execute the sql statement
+        if($result6=mysqli_query($link,$sql6)) {
+            
+          while($row = mysqli_fetch_assoc($result6)) {
+            $ManagerName = $row['Name'];
+          }        
+        }
 
         // Return Status to User
         if($LoginID == false) {
@@ -209,7 +229,7 @@ require_once('SQLFunctions.php');
     
     <p>
         <h3><u>Trainings:</u></h3>
-        <label>Training Name: <?php echo $TrainingName;?> <br> Instruction: <?php echo $Instruction;?> <br> Length: <?php echo $TimePeriodinHour;?> hour(s)</label>
+        <label>Manager: <?php echo $ManagerName?> <br> Training Name: <?php echo $TrainingName;?> <br> Instruction: <?php echo $Instruction;?> <br> Length: <?php echo $TimePeriodinHour;?> hour(s)</label>
     </p>
     
     
