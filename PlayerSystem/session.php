@@ -2,40 +2,49 @@
 
 session_start();
 
+
+
+
 if(!isset($_SESSION['user_id'])) {
 
-    // header("Location: Login.php");dont use this.
-    //use this:
-    echo ("<script>
-       window.location.assign('Login.php');
-       </script>");
+  echo ("<script>
+   window.location.assign('Login.php?test2=asdf');
+   </script>");
 
-    exit;
-    
+  exit;
+
 }
 
 else {
-    
-    /*Logout user after 10 minutes.*/
-    if ($_SESSION['timeout'] + 10 * 60 < time()) {
-        
-        // header("Location: Logout.php");dont use this.
-        //use this:
-        echo ("<script>
-           window.location.assign('Logout.php');
-           </script>");
+
+  if(!isset($_SESSION['timeout']))
+  {
+
+    $_SESSION['timeout'] = time() + 99; 
+
+  }
+
+  $_SESSION['session'] = time();
+
+  if ($_SESSION['session'] > $_SESSION['timeout']) {
 
 
-    }
-    
-    //User did not time out
-    else {
-        
-        $_SESSION['timeout'] = time();
-        
-    }
-    
-    
+   unset($_SESSION['session']);
+   unset($_SESSION['timeout']);
+   unset($_SESSION['user_id']);
+
+
+   echo ("<script>
+    alert('TIMEOUT!');
+    window.location.assign('Logout.php?test1=true');
+    </script>");
+
+   exit();
+ }
+
+
+
+
 }
 
 ?>
@@ -50,6 +59,6 @@ else {
   <a href="Logout.php">Log Off</a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="ChangePassword.php">Change Password</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="../index.php">Home</a>
 </div> 

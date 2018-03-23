@@ -1,3 +1,13 @@
+<?php 
+// $message = "";
+// if(isset($_GET['TIMEOUT'])) 
+//    echo 'TIMEOUT'; 
+
+// if($_GET['TIMEOUT'] == 'true') 
+//    echo '<br> true TIMEOUT';  
+?>
+
+
 <div align="right">
   <a href="PlayerPage.php">See Your Player Info!</a>
   &nbsp;&nbsp;&nbsp;&nbsp;
@@ -8,32 +18,32 @@
   <a href="Logout.php">Log Off</a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="ChangePassword.php">Change Password</a>
-      &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="../index.php">Home</a>
 </div> 
 
 
 <html>
 <head>
-<title>Player Login</title>
+  <title>Player Login</title>
 </head>
 
 <body style = "Color: #000000; background-color:#afbfff;">
   <h2>Player Login</h2>
   <form action="LoginSubmit.php" method="post">
-  <fieldset>
-    <p>
-      <label>LoginID</label>
-      <input type="text" name="LoginID" value="" maxlength="20" />
-    </p>
-    <p>
-      <label>Password</label>
-      <input type="password"  name="Password" value="" maxlength="20" />
-    </p>
-    <p>
-      <input type="submit" value="Login" />
-    </p>
-  </fieldset>
+    <fieldset>
+      <p>
+        <label>LoginID</label>
+        <input type="text" name="LoginID" value="" maxlength="20" />
+      </p>
+      <p>
+        <label>Password</label>
+        <input type="password}"  name="Password" value="" maxlength="20" />
+      </p>
+      <p>
+        <input type="submit" value="Login" />
+      </p>
+    </fieldset>
   </form>
 </body>
 </html>
