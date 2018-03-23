@@ -1,5 +1,0 @@
-User Login: qwer
-User Pass: qwer
-
-Manager Login: asdf
-Manager Pass: asdf

@@ -1,3 +1,15 @@
+-------------------------------------
+	In order to begin
+-------------------------------------
+Load the database (Phase2_DB.sql) and then create new 
+account or login with credentials:
+
+User Login: qwer
+User Pass: qwer
+
+Manager Login: asdf
+Manager Pass: asdf
+
 ---------------------------------------------
 |Player and Manager Database Web Application|
 ---------------------------------------------
