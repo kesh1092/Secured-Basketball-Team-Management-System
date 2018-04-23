@@ -155,8 +155,8 @@ INSERT INTO Training (TrainingName, Instruction, TimePeriodinHour) VALUES
     
     
 INSERT INTO AssignTraining (PlayerID, ManagerID, TrainingName) VALUES
-    (1, 1, 'Push Ups'),
-    (2, 2, 'Sit Ups'),
+    -- (1, 1, 'Push Ups'),
+    -- (2, 2, 'Sit Ups'),
     (3, 3, 'Jumping Jacks'),
     (4, 4, 'Jumps Squats'),
     (5, 5, 'Sprints');
