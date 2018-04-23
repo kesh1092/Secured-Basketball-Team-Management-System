@@ -4,12 +4,12 @@
 if(isset($_GET['modifyError'])) 
    echo 'Cant modify that training name. its already assigned to a player already.'; 
 
- 
+
 if(isset($_GET['deleteError'])) 
-   echo 'Cant delete. That Game is assigned to a player already.'; 
+   echo 'Cant delete. That Training is assigned to a player already.'; 
 ?>  
 
- 
+
 <head>
    <title>Accept/Decline Player Pending Accounts</title>
 </head>
@@ -29,7 +29,7 @@ if(isset($_GET['deleteError']))
 
 <?php
 include('../../SQLFunctions.php');
- 
+
 
 $link = ConnectDB();
 $table = Training;
@@ -53,8 +53,8 @@ if($result = mysqli_query($link, $sql)){
       session_start(); 
 
       $SelectedLoginID = $row[0];
-       echo "<tr>";
- ?>  <!-- END PHP -->
+      echo "<tr>";
+      ?>  <!-- END PHP -->
 
       <!-- HTML CODE resumes again -->
 
