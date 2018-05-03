@@ -77,9 +77,7 @@ else
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="AddUser.php">New? Create a New User</a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="Login.php">Log On</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="Logout.php">Log Off</a>
+   <a href="Logout.php">Log Off</a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="ChangePassword.php">Change Password</a>
 </div> 

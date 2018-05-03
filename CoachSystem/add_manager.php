@@ -14,7 +14,7 @@ if(isset($_GET['badID']))
 
    <h2>Add New Manager</h2>
    <form action="../index.php" method="get">
-      <input type="submit" value="Home"/>
+      <input type="submit" value="Main Menu"/>
       <!-- <input type="text" name="test 1" value="testVA"/> -->
    </form>
 

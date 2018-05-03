@@ -1,17 +1,19 @@
 <?php
 include('session.php');
-?>
 
-
-<?php
 session_start();
 require_once('SQLFunctions.php');
 
+if(isset($_GET['Edited'])) 
+   echo 'Player Edited<br>'; 
+
+
 $var = $_SESSION['timeout'] - $_SESSION['session'];
-echo 'LOGOUT in '. $var . ' seconds<br>'; 
+echo 'LOGOUT(function) in '. $var . ' seconds<br>'; 
 
 
-echo '$_SESSION["user_id"]: '. $_SESSION["user_id"] . ".<br>"; 
+
+// echo '$_SESSION["user_id"]: '. $_SESSION["user_id"] . ".<br>"; 
 $user_id = $_SESSION["user_id"];
 
 
@@ -89,7 +91,7 @@ try {
   }
 
         // Prep SQL statement
-  $sql6 = "SELECT Name FROM Manager WHERE ID = ".$user_id;
+  $sql6 = "SELECT Name FROM Manager WHERE ID = ".$ManagerID;
 
         // execute the sql statement
   if($result6=mysqli_query($link,$sql6)) {

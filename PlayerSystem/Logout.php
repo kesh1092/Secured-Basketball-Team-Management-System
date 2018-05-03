@@ -1,30 +1,31 @@
- <?php
- // session_start();
- // unset($_SESSION['user_id']);
- // unset($_SESSION['session']);
- // unset($_SESSION['timeout']);
+<?php
+session_start();
 
- // session_unset();
+//DOESNT WORK 
+unset($_SESSION['user_id']);
+unset($_SESSION['session']);
+unset($_SESSION['timeout']);
 
- // session_destroy();
+session_unset();
 
-
- 
-
-
- echo ("<script>
-   window.location.assign('Login.php?test3=false');
-   </script>");
+session_destroy();
 
 
-   ?>
-
-   <html>
-   <head>
-    <title>Logged Out</title>
-  </head>
   
-  <body>
-    <h1>You are now logged out.</h1>
-  </body>
-  </html>
+
+echo ("<script>
+   window.location.assign('../index.php?loggedOut');
+ </script>");
+
+
+ ?>
+
+ <html>
+ <head>
+  <title>Logged Out</title>
+</head>
+
+<body>
+  <h1>You are now logged out.</h1>
+</body>
+</html>

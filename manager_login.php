@@ -1,11 +1,17 @@
 <?php
+ini_set('session.cache_limiter','public');
+session_cache_limiter(false);
+
 session_start();
 // require_once('config.php');
 require_once('SQLFunctions.php');
 
 
-$LoginID =  $_POST['LoginID']; //passed on from login.php
-$passAtempt =  $_POST['Password']; //passed on from login.php
+$LoginID =  'asdf'; //passed on from login.php
+// $passAtempt =  $_POST['Password']; //passed on from login.php
+$passAtempt =  'asdf'; //passed on from login.php
+
+
 // $_SESSION['timeout'] = time(); //not implemented
 // echo 'Password: '. $passAtempt . ".<br>"; 
 
@@ -68,9 +74,7 @@ try
 
 
 //PLAYER LOGIN
-    $LoginID = $_POST['LoginID']; //passed on from login.php
-    $Password = $_POST['Password']; //passed on from login.php
-    
+     
 // echo 'loginID: ' .$LoginID. '<br>';
 // echo 'Password: ' .$Password. '<br>';
 
@@ -118,7 +122,7 @@ try
 // REDIRECT back to login page
    echo ("<script>
                   // alert('Invalide LoginID or Password...');
-      window.location.assign('index.php?invalid');
+      window.location.assign('index.php?invalid2');
       </script>");
 
 }

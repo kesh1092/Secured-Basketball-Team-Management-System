@@ -15,15 +15,13 @@ try
 {
    $link = connectDB();
 
-   //FULL
-      // $sql = "UPDATE Training SET TrainingName = '".$Name."', Instruction = '".$Birthday."', TimePeriodinHour = '".$Address."' WHERE TrainingName = '".$OriginalTrainingName."'";
-
 
    if(is_null($Birthday) && is_null($Address))
    $sql = "UPDATE Training SET TrainingName = '".$Name."' WHERE TrainingName = '".$OriginalTrainingName."'";
-//METHOD DOESNT SEEM TO WORK
+
    elseif (!is_null($Birthday)) 
       $sql = "UPDATE Training SET  Instruction = '".$Birthday."' WHERE TrainingName = '".$OriginalTrainingName."'";
+
    else
       $sql = "UPDATE Training SET  TimePeriodinHour = '".$Address."' WHERE TrainingName = '".$OriginalTrainingName."'";
 

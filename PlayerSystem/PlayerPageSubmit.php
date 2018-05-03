@@ -1,6 +1,11 @@
-<?php
-// include('session.php');
+<?php 
+session_start();
+
+if(isset($_GET['Edited'])) 
+   echo 'Player Edited...'; 
+ 
 ?>
+
 
 <?php
 
@@ -43,6 +48,10 @@ catch(Exception $e)
     $message = 'Unable to process request';
 }
 
+
+   echo ("<script>
+      window.location.assign('PlayerPage.php?Edited');
+      </script>");
 
 
 ?>

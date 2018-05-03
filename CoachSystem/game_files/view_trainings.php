@@ -1,4 +1,7 @@
 <?php //code handles view and editing of Manager information, but not: loginID + Password
+ini_set('session.cache_limiter','public');
+session_cache_limiter(false);
+
 session_start(); 
 if(empty($_SESSION['LoginID'])) //THIS MUST BE THE FIRST LINE EXECUTED. otherwise it wont work
 {

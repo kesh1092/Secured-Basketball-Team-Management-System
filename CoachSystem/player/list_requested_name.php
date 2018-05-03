@@ -6,17 +6,25 @@ include('../../SQLFunctions.php');
     //$table = Player;
     // echo '<br>Source Table ' . $table;
     
-    $SelectedLoginID = 'none';
+    // $SelectedLoginID = 'none';
     
     //if(!f_tableExists($link, $table, DB_NAME)){
     //    die('<br>Destination table does not exist: ' .$table);
     //}
     
+    // $Name = filter_var($_POST['Name'], FILTER_SANITIZE_STRING);
     $Name=$_POST['Name'];
 
-    //$sql = "SELECT * from $table WHERE RequestStatus = 'Pending'";
+
     $sql="SELECT * FROM Player WHERE Name='".$Name."'";
-    // echo '<br>sql :' .$sql;
+    
+    // $sql='SELECT * FROM Player WHERE Name="'.$Name.'"';
+    // $sql="SELECT * FROM Player WHERE Name LIKE '%".$Name."%'";
+
+
+    // $sql='SELECT * FROM Player WHERE Name=""';
+
+    echo '<br>sql :' .$sql;
     
     if($result = mysqli_query($link, $sql)){
          

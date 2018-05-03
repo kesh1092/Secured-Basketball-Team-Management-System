@@ -79,7 +79,7 @@ catch (Exception $e) {
 
          <p>
             <label>Instruction: </label>
-            <input type="date" name="Birthday" value="<?php echo $Instruction;?>" required/>
+            <input type="text" name="Birthday" value="<?php echo $Instruction;?>" required/>
          </p>
 
          <p>

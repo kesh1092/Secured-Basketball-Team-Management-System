@@ -1,8 +1,10 @@
+timeout and player login works
+
 -------------------------------------
 	In order to begin
 -------------------------------------
-Load the database (Phase2_DB.sql) and then create new 
-account or login with credentials:
+Load the database (DB.sql) and then create new a
+account, do 'quick-login', or login with credentials:
 
 User Login: qwer
 User Pass: qwer
