@@ -70,25 +70,19 @@ else
     }
 }
 
-
 ?>
-<div align="right">
-  <a href="PlayerPage.php">See Your Player Info!</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="AddUser.php">New? Create a New User</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-   <a href="Logout.php">Log Off</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="ChangePassword.php">Change Password</a>
-</div> 
 
-<html>
-  <head>
-    <title>Add New Player</title>
-  </head>
-  <body style = "Color: #000000; background-color:#afbfff;">
-    <!-- Message is a variable that was populated previously based on the php above  -->    
-    <p><?php echo $message; ?>
-  </body>
-</html>
+
+<script>
+window.location.assign('../index.php?new_user');
+</script>
+
+
+
+
+
+
+
+
+
 

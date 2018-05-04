@@ -35,29 +35,32 @@ if(isset($_GET['loggedIn']))
    <form action="training_files/view_trainings.php" method="post">
       <input type="submit" value="Trainings (ajax demo)"/>
    </form>
+
+   <form action="playerRequests.php" method="post">
+      <input type="submit" value="Player Account Requests"/>
+   </form>
+
    <br>   <br>
+
    <form action="game_files/view_trainings.php" method="post">
       <input type="submit" value="View Games"/>
    </form>
-
-
-
    <form action="player/request_player_info.php" method="post">
-      <input type="submit" value="Player Information"/>
+      <input type="submit" value="Players Information"/>
    </form>
-   <form action="playerRequests.php" method="post">
-      <input type="submit" value="View Player Login Requests"/>
-   </form>
-   <form action="certificates.php" method="post">
-      <input type="submit" value="Certificates"/>
+   <form action="Manager Certificates.php" method="post">
+      <input type="submit" value="Certifications"/>
    </form>
 
    <form action="assignPlayerGames.php" method="post">
       <input type="submit" value="Assign Games to Players"/>
    </form>
    <form action="assignPlayerTraining.php" method="post">
-      <input type="submit" value="View and assign trainings to players"/>
+      <input type="submit" value="Assign Trainings to players"/>
    </form>
+
+   <br>   <br>
+   
    <form action="../index.php?loggedOut" method="post">
       <input type="submit" value="Logout"/>    
    </form>

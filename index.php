@@ -4,6 +4,9 @@ session_cache_limiter(false);
 
 session_start();
 
+if(isset($_GET['new_user'])) 
+   echo 'Account must be approved by manager first before login'; 
+
 if(isset($_GET['redirected'])) 
    echo 'Redirected...'; 
 
